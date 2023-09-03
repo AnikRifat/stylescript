@@ -26,7 +26,7 @@ class UserController extends Controller
             $email = $userData->email;
 
             Mail::send(['text' => 'email.account-confirmation'], $userdata, function ($message) use ($email) {
-                $message->to($email)->subject('CLekhapora - Account Confirmation');
+                $message->to($email)->subject('CStyleScript - Account Confirmation');
             });
             return redirect()->back()->with('success', 'User Confirmed Successfully');
         } else {

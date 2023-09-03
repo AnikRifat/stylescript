@@ -45,7 +45,7 @@
     --bs-heading-bg: #262b3c;
     --bs-header-item-color: #a6b0cf;
     --bs-topbar-search-bg: #2a3042;
-    --bs-heading-dark-bg: #556ee6;
+    --bs-heading-dark-bg: #f7659b;
     --bs-boxed-body-bg: #32394f;
     --bs-topnav-bg: #282e3f;
     --bs-menu-item-color: #a6b0cf;
@@ -135,7 +135,7 @@
     --bs-nav-tabs-link-active-border-color: #3a425a;
     --bs-nav-tabs-border-color: #3a425a;
     --bs-nav-tabs-link-hover-border-color: #3a425a;
-    --bs-nav-tabs-link-active-color: #556ee6
+    --bs-nav-tabs-link-active-color: #f7659b
 }
 
 [data-layout-mode=dark] .accordion {
@@ -569,7 +569,7 @@ body[data-layout=horizontal] .footer {
 .vertical-menu {
     width: 250px;
     z-index: 1001;
-    background: #f7659b;
+    background: #c91557;
     bottom: 0;
     margin-top: 0;
     position: fixed;
@@ -690,15 +690,15 @@ body[data-layout=horizontal] .footer {
 }
 
 .mm-active .active {
-    color: #556ee6 !important
+    color: #000000 !important;
 }
 
 .mm-active .active i {
-    color: #556ee6 !important
+    color: #f7659b !important
 }
 
 .mm-active>i {
-    color: #556ee6 !important
+    color: #f7659b !important
 }
 
 @media (max-width: 992px) {
@@ -795,14 +795,14 @@ body[data-layout=horizontal] .footer {
 .vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a {
     position: relative;
     width: calc(190px + 70px);
-    color: #556ee6;
+    color: #f7659b;
     background-color: #f5f5f5;
     -webkit-transition: none;
     transition: none
 }
 
 .vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a i {
-    color: #556ee6
+    color: #f7659b
 }
 
 .vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a span {
@@ -1020,11 +1020,11 @@ body[data-sidebar-size=small].vertical-collpsed .footer {
 }
 
 body[data-sidebar=colored] .vertical-menu {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 body[data-sidebar=colored] .navbar-brand-box {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 body[data-sidebar=colored] .navbar-brand-box .logo-dark {
@@ -1094,23 +1094,23 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu>ul>li:
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li.mm-active .active {
-    color: #556ee6 !important
+    color: #f7659b !important
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li a:hover {
-    color: #556ee6
+    color: #f7659b
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li.mm-active {
-    color: #556ee6 !important
+    color: #f7659b !important
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li.mm-active>a {
-    color: #556ee6 !important
+    color: #f7659b !important
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li.mm-active>a i {
-    color: #556ee6 !important
+    color: #f7659b !important
 }
 
 .topnav {
@@ -1143,7 +1143,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 
 .topnav .navbar-nav .nav-link:focus,
 .topnav .navbar-nav .nav-link:hover {
-    color: #556ee6;
+    color: #f7659b;
     background-color: transparent
 }
 
@@ -1153,15 +1153,15 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 
 .topnav .navbar-nav .dropdown-item.active,
 .topnav .navbar-nav .dropdown-item:hover {
-    color: #556ee6
+    color: #f7659b
 }
 
 .topnav .navbar-nav .nav-item .nav-link.active {
-    color: #556ee6
+    color: #f7659b
 }
 
 .topnav .navbar-nav .dropdown.active>a {
-    color: #556ee6;
+    color: #f7659b;
     background-color: transparent
 }
 
@@ -1296,7 +1296,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 
     .topnav .dropdown .dropdown-item.active,
     .topnav .dropdown .dropdown-item:active {
-        color: #556ee6
+        color: #f7659b
     }
 
     .topnav .arrow-down::after {
@@ -1315,7 +1315,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
     }
 
     body[data-layout=horizontal][data-topbar=light] .topnav {
-        background-color: #556ee6
+        background-color: #f7659b
     }
 
     body[data-layout=horizontal][data-topbar=light] .topnav .navbar-nav .nav-link {
@@ -1333,7 +1333,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 }
 
 body[data-layout=horizontal][data-topbar=colored] #page-topbar {
-    background-color: #556ee6;
+    background-color: #f7659b;
     -webkit-box-shadow: none;
     box-shadow: none
 }
@@ -1378,7 +1378,7 @@ body[data-layout=horizontal][data-topbar=colored] .noti-icon i {
 
 @media (min-width: 992px) {
     body[data-layout=horizontal][data-topbar=colored] .topnav {
-        background-color: #556ee6
+        background-color: #f7659b
     }
 
     body[data-layout=horizontal][data-topbar=colored] .topnav .navbar-nav .nav-link {
@@ -1636,7 +1636,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #556ee6;
+    background-color: #f7659b;
     color: #fff;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1873,7 +1873,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
     display: block;
     width: 25%;
     height: 25%;
-    background-color: #556ee6;
+    background-color: #f7659b;
     border-radius: 100%;
     -webkit-animation: chase-dot-before 2s infinite ease-in-out both;
     animation: chase-dot-before 2s infinite ease-in-out both
@@ -2110,17 +2110,17 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 }
 
 .form-check-primary .form-check-input:checked {
-    background-color: #556ee6;
-    border-color: #556ee6
+    background-color: #f7659b;
+    border-color: #f7659b
 }
 
 .form-radio-primary .form-check-input:checked {
-    border-color: #556ee6;
-    background-color: #556ee6
+    border-color: #f7659b;
+    background-color: #f7659b
 }
 
 .form-radio-primary .form-check-input:checked:after {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .form-check-secondary .form-check-input:checked {
@@ -2357,7 +2357,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 }
 
 .icon-demo-content .col-lg-4:hover i {
-    color: #556ee6;
+    color: #f7659b;
     -webkit-transform: scale(1.5);
     transform: scale(1.5)
 }
@@ -2393,7 +2393,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 }
 
 .card-radio-input:checked+.card-radio {
-    border-color: #556ee6 !important
+    border-color: #f7659b !important
 }
 
 .navs-carousel .owl-nav {
@@ -2407,7 +2407,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
     font-size: 20px !important;
     border-radius: 50% !important;
     background-color: rgba(85, 110, 230, .25) !important;
-    color: #556ee6 !important;
+    color: #f7659b !important;
     margin: 4px 8px !important
 }
 
@@ -2879,7 +2879,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 .fc-state-active,
 .fc-state-disabled,
 .fc-state-down {
-    background-color: #556ee6;
+    background-color: #f7659b;
     color: #fff;
     text-shadow: none
 }
@@ -2896,7 +2896,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 
 .fc-event,
 .fc-event-dot {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .fc-event .fc-content {
@@ -2957,14 +2957,14 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 .irs--square .irs-from,
 .irs--square .irs-single,
 .irs--square .irs-to {
-    background: #556ee6 !important;
+    background: #f7659b !important;
     font-size: 11px
 }
 
 .irs--square .irs-from:before,
 .irs--square .irs-single:before,
 .irs--square .irs-to:before {
-    border-top-color: #556ee6
+    border-top-color: #f7659b
 }
 
 .irs--square .irs-line {
@@ -2985,7 +2985,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .irs--square .irs-handle {
-    border: 2px solid #556ee6;
+    border: 2px solid #f7659b;
     width: 12px;
     height: 12px;
     top: 26px;
@@ -3034,11 +3034,11 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .swal2-progress-steps .swal2-progress-step {
-    background: #556ee6
+    background: #f7659b
 }
 
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
-    background: #556ee6
+    background: #f7659b
 }
 
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step,
@@ -3047,11 +3047,11 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .swal2-progress-steps .swal2-progress-step-line {
-    background: #556ee6
+    background: #f7659b
 }
 
 .swal2-loader {
-    border-color: #556ee6 transparent #556ee6 transparent
+    border-color: #f7659b transparent #f7659b transparent
 }
 
 .swal2-popup {
@@ -3123,7 +3123,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .toast-primary {
-    border: 2px solid #556ee6 !important;
+    border: 2px solid #f7659b !important;
     background-color: rgba(85, 110, 230, .8) !important
 }
 
@@ -3257,7 +3257,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .select2-container--default .select2-results__option[aria-selected=true] {
@@ -3266,7 +3266,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .select2-container--default .select2-results__option[aria-selected=true]:hover {
-    background-color: #556ee6;
+    background-color: #f7659b;
     color: #fff
 }
 
@@ -3450,11 +3450,11 @@ input[switch]+label:after {
 }
 
 input[switch]:checked+label {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 input[switch]:checked+label {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 input[switch]:checked+label:before {
@@ -3488,7 +3488,7 @@ input[switch=default]:checked+label {
 }
 
 input[switch=primary]:checked+label {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 input[switch=success]:checked+label {
@@ -3588,7 +3588,7 @@ input[switch=dark]:checked+label:before {
     background-color: transparent;
     border-color: transparent;
     border-radius: 4px;
-    color: #556ee6;
+    color: #f7659b;
     text-decoration: none
 }
 
@@ -3657,7 +3657,7 @@ input[switch=dark]:checked+label:before {
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover,
 .datepicker table tr td.today:hover {
-    background-color: #556ee6 !important;
+    background-color: #f7659b !important;
     background-image: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3726,13 +3726,13 @@ input[switch=dark]:checked+label:before {
 .datepicker-panel>ul>li.picked,
 .datepicker-panel>ul>li.picked:hover {
     background-color: rgba(85, 110, 230, .25);
-    color: #556ee6
+    color: #f7659b
 }
 
 .datepicker-panel>ul>li.highlighted,
 .datepicker-panel>ul>li.highlighted:hover,
 .datepicker-panel>ul>li:hover {
-    background-color: #556ee6;
+    background-color: #f7659b;
     color: #fff
 }
 
@@ -3904,9 +3904,9 @@ input[switch=dark]:checked+label:before {
 }
 
 .tox .tox-button:hover {
-    background-color: #556ee6 !important;
+    background-color: #f7659b !important;
     background-image: none !important;
-    border-color: #556ee6 !important;
+    border-color: #f7659b !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important
 }
@@ -4029,8 +4029,8 @@ input[switch=dark]:checked+label:before {
     width: 38px;
     height: 38px;
     line-height: 34px;
-    border: 2px solid #556ee6;
-    color: #556ee6;
+    border: 2px solid #f7659b;
+    color: #f7659b;
     text-align: center;
     border-radius: 50%;
     margin-right: .5rem
@@ -4046,7 +4046,7 @@ input[switch=dark]:checked+label:before {
 .wizard .steps .current a .number,
 .wizard .steps .current a:active .number,
 .wizard .steps .current a:hover .number {
-    background-color: #556ee6;
+    background-color: #f7659b;
     color: #fff
 }
 
@@ -4091,7 +4091,7 @@ input[switch=dark]:checked+label:before {
 .wizard>.actions a,
 .wizard>.actions a:active,
 .wizard>.actions a:hover {
-    background-color: #556ee6;
+    background-color: #f7659b;
     border-radius: 4px;
     padding: 8px 15px;
     color: #fff
@@ -4101,7 +4101,7 @@ input[switch=dark]:checked+label:before {
 .wizard>.actions .disabled a:active,
 .wizard>.actions .disabled a:hover {
     opacity: .65;
-    background-color: #556ee6;
+    background-color: #f7659b;
     color: #fff;
     cursor: not-allowed
 }
@@ -4200,7 +4200,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     text-indent: 0 !important;
     line-height: 14px;
     content: "+";
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .table-rep-plugin .btn-toolbar {
@@ -4218,8 +4218,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .table-rep-plugin .btn-group .btn-default.btn-primary {
-    background-color: #556ee6;
-    border-color: #556ee6;
+    background-color: #f7659b;
+    border-color: #f7659b;
     color: #fff;
     -webkit-box-shadow: 0 0 0 2px rgba(85, 110, 230, .5);
     box-shadow: 0 0 0 2px rgba(85, 110, 230, .5)
@@ -4315,8 +4315,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .table-rep-plugin .checkbox-row input[type=checkbox]:checked+label::before {
-    background-color: #556ee6;
-    border-color: #556ee6
+    background-color: #f7659b;
+    border-color: #f7659b
 }
 
 .table-rep-plugin .checkbox-row input[type=checkbox]:checked+label::after {
@@ -4325,7 +4325,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .table-rep-plugin .fixed-solution .sticky-table-header {
     top: 70px !important;
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .table-rep-plugin .fixed-solution .sticky-table-header table {
@@ -4335,8 +4335,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 .table-rep-plugin .sticky-table-header,
 .table-rep-plugin table.focus-on tbody tr.focused td,
 .table-rep-plugin table.focus-on tbody tr.focused th {
-    background: #556ee6;
-    border-color: #556ee6;
+    background: #f7659b;
+    border-color: #f7659b;
     color: #fff
 }
 
@@ -4500,7 +4500,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     color: #fff;
     font-size: 16px;
     line-height: 40px;
-    background: #556ee6;
+    background: #f7659b;
     border-radius: 4px;
     padding: 10px 20px
 }
@@ -4517,14 +4517,14 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     bottom: -15px;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-top: 16px solid #556ee6
+    border-top: 16px solid #f7659b
 }
 
 .gmaps-overlay_arrow.below {
     top: -15px;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-bottom: 16px solid #556ee6
+    border-bottom: 16px solid #f7659b
 }
 
 .jvectormap-label {
@@ -4612,7 +4612,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .auth-review-carousel.owl-theme .owl-dots .owl-dot.active span,
 .auth-review-carousel.owl-theme .owl-dots .owl-dot:hover span {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .search-box .form-control {
@@ -4674,12 +4674,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .product-color a.active,
 .product-color a:hover {
-    color: #556ee6
+    color: #f7659b
 }
 
 .product-color a.active .product-color-item,
 .product-color a:hover .product-color-item {
-    border-color: #556ee6 !important
+    border-color: #f7659b !important
 }
 
 .visa-card .visa-logo {
@@ -4704,7 +4704,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .checkout-tabs .nav-pills .nav-link.active {
-    background-color: #556ee6
+    background-color: #f7659b
 }
 
 .checkout-tabs .nav-pills .nav-link .check-nav-icon {
@@ -4855,8 +4855,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .message-list li.active,
 .message-list li.active:hover {
-    -webkit-box-shadow: inset 3px 0 0 #556ee6;
-    box-shadow: inset 3px 0 0 #556ee6
+    -webkit-box-shadow: inset 3px 0 0 #f7659b;
+    box-shadow: inset 3px 0 0 #f7659b
 }
 
 .message-list li.unread {
@@ -4948,7 +4948,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .categories-list li.active a {
-    color: #556ee6
+    color: #f7659b
 }
 
 .categories-list li ul {
@@ -5098,7 +5098,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .chat-conversation .conversation-list .ctext-wrap .conversation-name {
     font-weight: 600;
-    color: #556ee6;
+    color: #f7659b;
     margin-bottom: 4px
 }
 
@@ -5151,7 +5151,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     content: "\f0009";
     font-family: "Material Design Icons";
     position: absolute;
-    color: #556ee6;
+    color: #f7659b;
     right: 0;
     bottom: 0;
     font-size: 16px
@@ -5231,7 +5231,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
         top: 50%;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
-        background-color: #556ee6;
+        background-color: #f7659b;
         color: #fff;
         z-index: 9;
         right: -34px
@@ -5332,7 +5332,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
     .navigation .navbar-nav .nav-item .nav-link.active,
     .navigation .navbar-nav .nav-item .nav-link:hover {
-        color: #556ee6
+        color: #f7659b
     }
 }
 
@@ -5367,7 +5367,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .navigation.nav-sticky .navbar-nav .nav-item .nav-link.active,
 .navigation.nav-sticky .navbar-nav .nav-item .nav-link:hover {
-    color: #556ee6
+    color: #f7659b
 }
 
 .bg-overlay {
@@ -5623,7 +5623,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .verti-timeline .event-list.active .event-timeline-dot {
-    color: #556ee6
+    color: #f7659b
 }
 
 .verti-timeline .event-list:last-child {
@@ -5662,7 +5662,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .jobs-categories a:hover {
-    color: #556ee6
+    color: #f7659b
 }
 
 /*# sourceMappingURL=app.min.css.map */

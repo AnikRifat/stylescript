@@ -96,7 +96,7 @@ class OrderController extends Controller
                 $email = Auth::user()->email;
 
                 Mail::send(['text' => 'email.course-purchase'], $userdata, function ($message) use ($email) {
-                    $message->to($email)->subject('CLekhapora - course order');
+                    $message->to($email)->subject('StyleScript - course order');
                 });
 
                 $percentage = (25 / 100) * $data['price'];
@@ -135,7 +135,7 @@ class OrderController extends Controller
                 $email = Auth::user()->email;
 
                 Mail::send(['text' => 'email.product-purchase'], $userdata, function ($message) use ($email) {
-                    $message->to($email)->subject('Lekhapora - product order');
+                    $message->to($email)->subject('StyleScript - product order');
                 });
 
 

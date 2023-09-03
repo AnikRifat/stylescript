@@ -53,7 +53,7 @@ class RegisterController extends Controller
 
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'numeric','unique:users'],
+            'phone' => ['required', 'numeric', 'unique:users'],
             'role' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
@@ -73,7 +73,7 @@ class RegisterController extends Controller
         // $data = array('name' => "Virat Gandhi");
         // dd($data);
         // Mail::send(['text' => 'email.test'], $data, function ($message) {
-        //     $message->to('reafatul@gmail.com')->subject('Welcome to Lekhapora - Your Learning Journey Begins!');
+        //     $message->to('reafatul@gmail.com')->subject('Welcome to StyleScript - Your Learning Journey Begins!');
         // });
 
         $userdata = array('name' => $data['name'], 'email' => $data['email']);

@@ -6,23 +6,23 @@
 
         <li class="menu-title" key="t-menu">Web Contents</li>
 
-        <li>
+        {{-- <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
                 <span key="t-Shop">users</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('users.index') }}" key="t-list">All users</a></li>
-                <li><a href="{{ route('users.customer') }}" key="t-list">customer</a></li>
-                <li><a href="{{ route('users.customer.confirmation') }}" key="t-list">customer confirmation</a></li>
-                <li><a href="{{ route('users.instructor') }}" key="t-list">instructor</a></li>
-                <li><a href="{{ route('users.instructor.confirmation') }}" key="t-list">instructor confirmation</a></li>
+        <li><a href="{{ route('users.customer') }}" key="t-list">customer</a></li>
+        <li><a href="{{ route('users.customer.confirmation') }}" key="t-list">customer confirmation</a></li>
+        <li><a href="{{ route('users.instructor') }}" key="t-list">instructor</a></li>
+        <li><a href="{{ route('users.instructor.confirmation') }}" key="t-list">instructor confirmation</a></li>
 
 
-            </ul>
-        </li>
-        {{-- start - attendance --}}
-        {{-- <li>
+    </ul>
+    </li> --}}
+    {{-- start - attendance --}}
+    {{-- <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
                 <span key="t-attendance">Attendance</span>
@@ -71,45 +71,43 @@
 
         </ul>
     </li>
-    <li>
+    {{-- <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bx-home-circle"></i>
             <span key="t-Shop">Courses</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
             <li><a href="{{ route('durations.index') }}" key="t-list">Timelines</a></li>
-            <li><a href="{{ route('courses.all') }}" key="t-list">All Courses</a></li>
-            {{-- End - Category --}}
-            {{-- Category --}}
-            <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
+    <li><a href="{{ route('courses.all') }}" key="t-list">All Courses</a></li>
 
-                    <span key="t-Category">Professions</span>
-                </a>
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="{{ route('categories.index') }}" key="t-list">All Professions</a></li>
-                    <li><a href="{{ route('categories.create') }}" key="t-create">Create Professions</a></li>
+    <li>
+        <a href="javascript: void(0);" class="has-arrow waves-effect">
 
-                </ul>
-            </li>
-            {{-- End - Category --}}
-            {{-- subject --}}
-            <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <span key="t-Category">Professions</span>
+        </a>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('categories.index') }}" key="t-list">All Professions</a></li>
+            <li><a href="{{ route('categories.create') }}" key="t-create">Create Professions</a></li>
 
-                    <span key="t-subject">Subject</span>
-                </a>
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="{{ route('subjects.index') }}" key="t-list">All Subject</a></li>
-                    <li><a href="{{ route('subjects.create') }}" key="t-create">Create Subject</a></li>
-
-                </ul>
-            </li>
-            {{-- End - subject --}}
         </ul>
     </li>
 
-    {{-- Shop --}}
+    <li>
+        <a href="javascript: void(0);" class="has-arrow waves-effect">
+
+            <span key="t-subject">Subject</span>
+        </a>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('subjects.index') }}" key="t-list">All Subject</a></li>
+            <li><a href="{{ route('subjects.create') }}" key="t-create">Create Subject</a></li>
+
+        </ul>
+    </li>
+
+    </ul>
+    </li> --}}
+
+
     <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bx-home-circle"></i>

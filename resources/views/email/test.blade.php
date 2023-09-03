@@ -1,7 +1,7 @@
 {{-- {{ $name }} --}}
 Dear{{ $name }},
 
-Congratulations! You have successfully registered on Lekhapora, your ultimate destination for online
+Congratulations! You have successfully registered on StyleScript, your ultimate destination for online
 learning. We are thrilled to have you join our community of eager learners, and we can't wait to help you unlock your
 full potential.
 
@@ -9,7 +9,7 @@ Here are the details of your new account:
 Username: {{ $name }}
 Email Address: {{ $email }}
 
-At Lekhapora, we believe that knowledge has the power to transform lives. With your new account, you now have
+At StyleScript, we believe that knowledge has the power to transform lives. With your new account, you now have
 access to a vast array of courses, resources, and interactive features that will support your learning journey. Here's
 what you can expect:
 
@@ -36,9 +36,9 @@ encounter any issues, or need assistance along the way, our dedicated support te
 Start your learning journey today by logging into your account at lekhapora.com. We encourage you to explore the
 available courses, set learning goals, and embrace the joy of continuous learning.
 
-Thank you for choosing Lekhapora as your learning partner. We're excited to embark on this educational
+Thank you for choosing StyleScript as your learning partner. We're excited to embark on this educational
 adventure together!
 
 Best regards,
 
-Lekhapora
+StyleScript
