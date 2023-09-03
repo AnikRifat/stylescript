@@ -33,7 +33,7 @@ your knowledge and broaden your understanding of the subject matter.
 We are committed to providing you with a seamless and enriching learning experience. Should you have any questions,
 encounter any issues, or need assistance along the way, our dedicated support team is here to help.
 
-Start your learning journey today by logging into your account at lekhapora.com. We encourage you to explore the
+Start your learning journey today by logging into your account at StyleScript.com. We encourage you to explore the
 available courses, set learning goals, and embrace the joy of continuous learning.
 
 Thank you for choosing StyleScript as your learning partner. We're excited to embark on this educational
