@@ -68,6 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         // dd($data);
 
         // $data = array('name' => "Virat Gandhi");
@@ -82,6 +83,7 @@ class RegisterController extends Controller
         Mail::send(['text' => 'email.test'], $userdata, function ($message) use ($email) {
             $message->to($email)->subject('User Registration Done');
         });
+        // dd($data);
 
         return User::create([
             'name' => $data['name'],

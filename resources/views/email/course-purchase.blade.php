@@ -8,6 +8,7 @@ Course: {{ $productName }}
 
 Total Amount: {{ $totalAmount }}
 
+
 We appreciate your trust in our products and services. If you have any questions or concerns regarding your order,
 please don't hesitate to reach out to our customer support team. We're here to assist you.
 

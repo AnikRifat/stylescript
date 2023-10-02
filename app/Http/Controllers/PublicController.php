@@ -85,7 +85,7 @@ class PublicController extends Controller
 
 
 
-            return view('web.pages.dashboard.index', compact('user'));
+            return view('web.pages.dashboard.pages.index', compact('user'));
         } else {
             return view('web.pages.authentication.customer.complete-profile');
         }

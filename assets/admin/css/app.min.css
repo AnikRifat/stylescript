@@ -45,7 +45,7 @@
     --bs-heading-bg: #262b3c;
     --bs-header-item-color: #a6b0cf;
     --bs-topbar-search-bg: #2a3042;
-    --bs-heading-dark-bg: #f7659b;
+    --bs-heading-dark-bg: #b86a77;
     --bs-boxed-body-bg: #32394f;
     --bs-topnav-bg: #282e3f;
     --bs-menu-item-color: #a6b0cf;
@@ -135,7 +135,7 @@
     --bs-nav-tabs-link-active-border-color: #3a425a;
     --bs-nav-tabs-border-color: #3a425a;
     --bs-nav-tabs-link-hover-border-color: #3a425a;
-    --bs-nav-tabs-link-active-color: #f7659b
+    --bs-nav-tabs-link-active-color: #b86a77
 }
 
 [data-layout-mode=dark] .accordion {
@@ -172,7 +172,7 @@
     right: 0;
     left: 0;
     z-index: 1002;
-    background-color: #f7659b;
+    background-color: #f6cfca;
     -webkit-box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
     box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03)
 }
@@ -569,7 +569,7 @@ body[data-layout=horizontal] .footer {
 .vertical-menu {
     width: 250px;
     z-index: 1001;
-    background: #c91557;
+    background: #b86a77;
     bottom: 0;
     margin-top: 0;
     position: fixed;
@@ -694,11 +694,11 @@ body[data-layout=horizontal] .footer {
 }
 
 .mm-active .active i {
-    color: #f7659b !important
+    color: #b86a77 !important
 }
 
 .mm-active>i {
-    color: #f7659b !important
+    color: #b86a77 !important
 }
 
 @media (max-width: 992px) {
@@ -795,14 +795,14 @@ body[data-layout=horizontal] .footer {
 .vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a {
     position: relative;
     width: calc(190px + 70px);
-    color: #f7659b;
+    color: #b86a77;
     background-color: #f5f5f5;
     -webkit-transition: none;
     transition: none
 }
 
 .vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a i {
-    color: #f7659b
+    color: #b86a77
 }
 
 .vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a span {
@@ -1020,11 +1020,11 @@ body[data-sidebar-size=small].vertical-collpsed .footer {
 }
 
 body[data-sidebar=colored] .vertical-menu {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 body[data-sidebar=colored] .navbar-brand-box {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 body[data-sidebar=colored] .navbar-brand-box .logo-dark {
@@ -1094,23 +1094,23 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu>ul>li:
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li.mm-active .active {
-    color: #f7659b !important
+    color: #b86a77 !important
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li a:hover {
-    color: #f7659b
+    color: #b86a77
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li.mm-active {
-    color: #f7659b !important
+    color: #b86a77 !important
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li.mm-active>a {
-    color: #f7659b !important
+    color: #b86a77 !important
 }
 
 body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li ul.sub-menu li.mm-active>a i {
-    color: #f7659b !important
+    color: #b86a77 !important
 }
 
 .topnav {
@@ -1143,7 +1143,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 
 .topnav .navbar-nav .nav-link:focus,
 .topnav .navbar-nav .nav-link:hover {
-    color: #f7659b;
+    color: #b86a77;
     background-color: transparent
 }
 
@@ -1153,15 +1153,15 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 
 .topnav .navbar-nav .dropdown-item.active,
 .topnav .navbar-nav .dropdown-item:hover {
-    color: #f7659b
+    color: #b86a77
 }
 
 .topnav .navbar-nav .nav-item .nav-link.active {
-    color: #f7659b
+    color: #b86a77
 }
 
 .topnav .navbar-nav .dropdown.active>a {
-    color: #f7659b;
+    color: #b86a77;
     background-color: transparent
 }
 
@@ -1296,7 +1296,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 
     .topnav .dropdown .dropdown-item.active,
     .topnav .dropdown .dropdown-item:active {
-        color: #f7659b
+        color: #b86a77
     }
 
     .topnav .arrow-down::after {
@@ -1315,7 +1315,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
     }
 
     body[data-layout=horizontal][data-topbar=light] .topnav {
-        background-color: #f7659b
+        background-color: #b86a77
     }
 
     body[data-layout=horizontal][data-topbar=light] .topnav .navbar-nav .nav-link {
@@ -1333,7 +1333,7 @@ body[data-sidebar=colored].vertical-collpsed .vertical-menu #sidebar-menu ul li 
 }
 
 body[data-layout=horizontal][data-topbar=colored] #page-topbar {
-    background-color: #f7659b;
+    background-color: #b86a77;
     -webkit-box-shadow: none;
     box-shadow: none
 }
@@ -1378,7 +1378,7 @@ body[data-layout=horizontal][data-topbar=colored] .noti-icon i {
 
 @media (min-width: 992px) {
     body[data-layout=horizontal][data-topbar=colored] .topnav {
-        background-color: #f7659b
+        background-color: #b86a77
     }
 
     body[data-layout=horizontal][data-topbar=colored] .topnav .navbar-nav .nav-link {
@@ -1636,7 +1636,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #f7659b;
+    background-color: #b86a77;
     color: #fff;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1873,7 +1873,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
     display: block;
     width: 25%;
     height: 25%;
-    background-color: #f7659b;
+    background-color: #b86a77;
     border-radius: 100%;
     -webkit-animation: chase-dot-before 2s infinite ease-in-out both;
     animation: chase-dot-before 2s infinite ease-in-out both
@@ -2110,17 +2110,17 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 }
 
 .form-check-primary .form-check-input:checked {
-    background-color: #f7659b;
-    border-color: #f7659b
+    background-color: #b86a77;
+    border-color: #b86a77
 }
 
 .form-radio-primary .form-check-input:checked {
-    border-color: #f7659b;
-    background-color: #f7659b
+    border-color: #b86a77;
+    background-color: #b86a77
 }
 
 .form-radio-primary .form-check-input:checked:after {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .form-check-secondary .form-check-input:checked {
@@ -2357,7 +2357,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 }
 
 .icon-demo-content .col-lg-4:hover i {
-    color: #f7659b;
+    color: #b86a77;
     -webkit-transform: scale(1.5);
     transform: scale(1.5)
 }
@@ -2393,7 +2393,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 }
 
 .card-radio-input:checked+.card-radio {
-    border-color: #f7659b !important
+    border-color: #b86a77 !important
 }
 
 .navs-carousel .owl-nav {
@@ -2407,7 +2407,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
     font-size: 20px !important;
     border-radius: 50% !important;
     background-color: rgba(85, 110, 230, .25) !important;
-    color: #f7659b !important;
+    color: #b86a77 !important;
     margin: 4px 8px !important
 }
 
@@ -2879,7 +2879,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 .fc-state-active,
 .fc-state-disabled,
 .fc-state-down {
-    background-color: #f7659b;
+    background-color: #b86a77;
     color: #fff;
     text-shadow: none
 }
@@ -2896,7 +2896,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 
 .fc-event,
 .fc-event-dot {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .fc-event .fc-content {
@@ -2957,14 +2957,14 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 .irs--square .irs-from,
 .irs--square .irs-single,
 .irs--square .irs-to {
-    background: #f7659b !important;
+    background: #b86a77 !important;
     font-size: 11px
 }
 
 .irs--square .irs-from:before,
 .irs--square .irs-single:before,
 .irs--square .irs-to:before {
-    border-top-color: #f7659b
+    border-top-color: #b86a77
 }
 
 .irs--square .irs-line {
@@ -2985,7 +2985,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .irs--square .irs-handle {
-    border: 2px solid #f7659b;
+    border: 2px solid #b86a77;
     width: 12px;
     height: 12px;
     top: 26px;
@@ -3034,11 +3034,11 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .swal2-progress-steps .swal2-progress-step {
-    background: #f7659b
+    background: #b86a77
 }
 
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
-    background: #f7659b
+    background: #b86a77
 }
 
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step,
@@ -3047,11 +3047,11 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .swal2-progress-steps .swal2-progress-step-line {
-    background: #f7659b
+    background: #b86a77
 }
 
 .swal2-loader {
-    border-color: #f7659b transparent #f7659b transparent
+    border-color: #b86a77 transparent #b86a77 transparent
 }
 
 .swal2-popup {
@@ -3123,7 +3123,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .toast-primary {
-    border: 2px solid #f7659b !important;
+    border: 2px solid #b86a77 !important;
     background-color: rgba(85, 110, 230, .8) !important
 }
 
@@ -3257,7 +3257,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .select2-container--default .select2-results__option[aria-selected=true] {
@@ -3266,7 +3266,7 @@ input[type=checkbox].tui-full-calendar-checkbox-round+span {
 }
 
 .select2-container--default .select2-results__option[aria-selected=true]:hover {
-    background-color: #f7659b;
+    background-color: #b86a77;
     color: #fff
 }
 
@@ -3450,11 +3450,11 @@ input[switch]+label:after {
 }
 
 input[switch]:checked+label {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 input[switch]:checked+label {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 input[switch]:checked+label:before {
@@ -3488,7 +3488,7 @@ input[switch=default]:checked+label {
 }
 
 input[switch=primary]:checked+label {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 input[switch=success]:checked+label {
@@ -3588,7 +3588,7 @@ input[switch=dark]:checked+label:before {
     background-color: transparent;
     border-color: transparent;
     border-radius: 4px;
-    color: #f7659b;
+    color: #b86a77;
     text-decoration: none
 }
 
@@ -3657,7 +3657,7 @@ input[switch=dark]:checked+label:before {
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover,
 .datepicker table tr td.today:hover {
-    background-color: #f7659b !important;
+    background-color: #b86a77 !important;
     background-image: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3726,13 +3726,13 @@ input[switch=dark]:checked+label:before {
 .datepicker-panel>ul>li.picked,
 .datepicker-panel>ul>li.picked:hover {
     background-color: rgba(85, 110, 230, .25);
-    color: #f7659b
+    color: #b86a77
 }
 
 .datepicker-panel>ul>li.highlighted,
 .datepicker-panel>ul>li.highlighted:hover,
 .datepicker-panel>ul>li:hover {
-    background-color: #f7659b;
+    background-color: #b86a77;
     color: #fff
 }
 
@@ -3904,9 +3904,9 @@ input[switch=dark]:checked+label:before {
 }
 
 .tox .tox-button:hover {
-    background-color: #f7659b !important;
+    background-color: #b86a77 !important;
     background-image: none !important;
-    border-color: #f7659b !important;
+    border-color: #b86a77 !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important
 }
@@ -4029,8 +4029,8 @@ input[switch=dark]:checked+label:before {
     width: 38px;
     height: 38px;
     line-height: 34px;
-    border: 2px solid #f7659b;
-    color: #f7659b;
+    border: 2px solid #b86a77;
+    color: #b86a77;
     text-align: center;
     border-radius: 50%;
     margin-right: .5rem
@@ -4046,7 +4046,7 @@ input[switch=dark]:checked+label:before {
 .wizard .steps .current a .number,
 .wizard .steps .current a:active .number,
 .wizard .steps .current a:hover .number {
-    background-color: #f7659b;
+    background-color: #b86a77;
     color: #fff
 }
 
@@ -4091,7 +4091,7 @@ input[switch=dark]:checked+label:before {
 .wizard>.actions a,
 .wizard>.actions a:active,
 .wizard>.actions a:hover {
-    background-color: #f7659b;
+    background-color: #b86a77;
     border-radius: 4px;
     padding: 8px 15px;
     color: #fff
@@ -4101,7 +4101,7 @@ input[switch=dark]:checked+label:before {
 .wizard>.actions .disabled a:active,
 .wizard>.actions .disabled a:hover {
     opacity: .65;
-    background-color: #f7659b;
+    background-color: #b86a77;
     color: #fff;
     cursor: not-allowed
 }
@@ -4200,7 +4200,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     text-indent: 0 !important;
     line-height: 14px;
     content: "+";
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .table-rep-plugin .btn-toolbar {
@@ -4218,8 +4218,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .table-rep-plugin .btn-group .btn-default.btn-primary {
-    background-color: #f7659b;
-    border-color: #f7659b;
+    background-color: #b86a77;
+    border-color: #b86a77;
     color: #fff;
     -webkit-box-shadow: 0 0 0 2px rgba(85, 110, 230, .5);
     box-shadow: 0 0 0 2px rgba(85, 110, 230, .5)
@@ -4315,8 +4315,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .table-rep-plugin .checkbox-row input[type=checkbox]:checked+label::before {
-    background-color: #f7659b;
-    border-color: #f7659b
+    background-color: #b86a77;
+    border-color: #b86a77
 }
 
 .table-rep-plugin .checkbox-row input[type=checkbox]:checked+label::after {
@@ -4325,7 +4325,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .table-rep-plugin .fixed-solution .sticky-table-header {
     top: 70px !important;
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .table-rep-plugin .fixed-solution .sticky-table-header table {
@@ -4335,8 +4335,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 .table-rep-plugin .sticky-table-header,
 .table-rep-plugin table.focus-on tbody tr.focused td,
 .table-rep-plugin table.focus-on tbody tr.focused th {
-    background: #f7659b;
-    border-color: #f7659b;
+    background: #b86a77;
+    border-color: #b86a77;
     color: #fff
 }
 
@@ -4500,7 +4500,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     color: #fff;
     font-size: 16px;
     line-height: 40px;
-    background: #f7659b;
+    background: #b86a77;
     border-radius: 4px;
     padding: 10px 20px
 }
@@ -4517,14 +4517,14 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     bottom: -15px;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-top: 16px solid #f7659b
+    border-top: 16px solid #b86a77
 }
 
 .gmaps-overlay_arrow.below {
     top: -15px;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-bottom: 16px solid #f7659b
+    border-bottom: 16px solid #b86a77
 }
 
 .jvectormap-label {
@@ -4612,7 +4612,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .auth-review-carousel.owl-theme .owl-dots .owl-dot.active span,
 .auth-review-carousel.owl-theme .owl-dots .owl-dot:hover span {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .search-box .form-control {
@@ -4674,12 +4674,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .product-color a.active,
 .product-color a:hover {
-    color: #f7659b
+    color: #b86a77
 }
 
 .product-color a.active .product-color-item,
 .product-color a:hover .product-color-item {
-    border-color: #f7659b !important
+    border-color: #b86a77 !important
 }
 
 .visa-card .visa-logo {
@@ -4704,7 +4704,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .checkout-tabs .nav-pills .nav-link.active {
-    background-color: #f7659b
+    background-color: #b86a77
 }
 
 .checkout-tabs .nav-pills .nav-link .check-nav-icon {
@@ -4855,8 +4855,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .message-list li.active,
 .message-list li.active:hover {
-    -webkit-box-shadow: inset 3px 0 0 #f7659b;
-    box-shadow: inset 3px 0 0 #f7659b
+    -webkit-box-shadow: inset 3px 0 0 #b86a77;
+    box-shadow: inset 3px 0 0 #b86a77
 }
 
 .message-list li.unread {
@@ -4948,7 +4948,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .categories-list li.active a {
-    color: #f7659b
+    color: #b86a77
 }
 
 .categories-list li ul {
@@ -5098,7 +5098,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .chat-conversation .conversation-list .ctext-wrap .conversation-name {
     font-weight: 600;
-    color: #f7659b;
+    color: #b86a77;
     margin-bottom: 4px
 }
 
@@ -5151,7 +5151,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     content: "\f0009";
     font-family: "Material Design Icons";
     position: absolute;
-    color: #f7659b;
+    color: #b86a77;
     right: 0;
     bottom: 0;
     font-size: 16px
@@ -5231,7 +5231,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
         top: 50%;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
-        background-color: #f7659b;
+        background-color: #b86a77;
         color: #fff;
         z-index: 9;
         right: -34px
@@ -5332,7 +5332,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
     .navigation .navbar-nav .nav-item .nav-link.active,
     .navigation .navbar-nav .nav-item .nav-link:hover {
-        color: #f7659b
+        color: #b86a77
     }
 }
 
@@ -5367,7 +5367,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .navigation.nav-sticky .navbar-nav .nav-item .nav-link.active,
 .navigation.nav-sticky .navbar-nav .nav-item .nav-link:hover {
-    color: #f7659b
+    color: #b86a77
 }
 
 .bg-overlay {
@@ -5623,7 +5623,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .verti-timeline .event-list.active .event-timeline-dot {
-    color: #f7659b
+    color: #b86a77
 }
 
 .verti-timeline .event-list:last-child {
@@ -5662,7 +5662,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .jobs-categories a:hover {
-    color: #f7659b
+    color: #b86a77
 }
 
 /*# sourceMappingURL=app.min.css.map */

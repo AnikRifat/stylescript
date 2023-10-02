@@ -1,22 +1,44 @@
 @extends('web.app.app')
 
 @section('main-body')
+
+<div class="page-banner bg-color-05" style="margin-top: 150.639px;">
+    <div class="page-banner__wrapper" style="margin-top: 150.639px;">
+        <div class="container">
+
+            <!-- Page Breadcrumb Start -->
+            <div class="page-breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                    <li class="breadcrumb-item active">User</li>
+                </ul>
+            </div>
+            <!-- Page Breadcrumb End -->
+
+            <!-- Page Banner Caption Start -->
+            <div class="page-banner__caption text-center">
+                <h2 class="page-banner__main-title">Reset Password</h2>
+            </div>
+            <!-- Page Banner Caption End -->
+
+        </div>
+    </div>
+</div>
 <div class="main-body">
     <section class="form-page js-mouse-move-container">
-        <div class="form-page__content lg:py-50">
+        <div class="form-page__content lg:py-5">
             <div class="container">
-                <div class="row justify-center items-center">
+                <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8 mx-auto">
-                        <div class="px-50 py-50 md:px-25 md:py-25 bg-white shadow-1 rounded-16">
-                            <h3 class="text-30 lh-13">Confirm Password</h3>
-                            <p class="mt-10">{{ __('Please confirm your password before continuing.') }}</p>
+                        <div class="px-5 py-5 md:px-2 md:py-2 bg-white shadow-md rounded-md">
+                            <h3 class="text-3xl">Confirm Password</h3>
+                            <p class="mt-4">{{ __('Please confirm your password before continuing.') }}</p>
 
-                            <form class="contact-form respondForm__form row y-gap-20 pt-30" method="POST"
-                              action="{{ route('password.confirm') }}">
+                            <form class="pt-5" method="POST" action="{{ route('password.confirm') }}">
                                 @csrf
 
-                                <div class="col-12">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10" for="password">
+                                <div class="mb-4">
+                                    <label for="password" class="form-label">
                                         {{ __('Password') }}
                                     </label>
 
@@ -25,14 +47,14 @@
                                       required autocomplete="current-password">
 
                                     @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                     @enderror
                                 </div>
 
-                                <div class="col-12">
-                                    <button type="submit" class="button -md -green-1 text-dark-1 fw-500 w-1/1">
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-primary">
                                         {{ __('Confirm Password') }}
                                     </button>
 

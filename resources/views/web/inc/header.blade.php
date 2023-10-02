@@ -17,11 +17,23 @@
                 </div>
 
                 <div class="header-top-bar-wrap__info d-sm-flex">
+                    @if(Auth::user())
+                    <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
+                        @if(Auth::user()->role == 0)
+                        <li><a class="text-light" href="{{ route('login') }}">Dashboard</a></li>
+                        @else
+                        <li><a class="text-light" href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                        @endif
+
+                    </ul>
+                    @else
                     <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
                         <li><button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></li>
                         <li><button data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
                         </li>
                     </ul>
+                    @endif
+
                     <ul class="header-top-bar-wrap__info-social">
                         <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>

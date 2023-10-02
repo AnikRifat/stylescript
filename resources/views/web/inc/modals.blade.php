@@ -30,7 +30,7 @@
                                 <label for="rememberme">Remember me</label>
                             </div>
                             <div class="text-end">
-                                <a class="modal-form__link" href="#">Forgot your password?</a>
+                                <a class="modal-form__link" href="{{ route('password.request') }}">Forgot your password?</a>
                             </div>
                         </div>
                         <div class="modal-form">
@@ -38,15 +38,7 @@
                         </div>
                     </form>
 
-                    <div class="modal-social-option">
-                        <p>or Log-in with</p>
 
-                        <ul class="modal-social-btn">
-                            <li><a href="#" class="btn facebook"><i class="fab fa-facebook-square"></i>
-                                    Gacebook</a></li>
-                            <li><a href="#" class="btn google"><i class="fab fa-google"></i> Google</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <!-- Modal Content End -->
@@ -75,57 +67,71 @@
                 </div>
                 <div class="modal-body">
 
-                    <form action="#">
-                        <div class="row gy-5">
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" placeholder="First Name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" placeholder="username">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Email</label>
-                                    <input type="text" class="form-control" placeholder="Your Email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Re-Enter Password</label>
-                                    <input type="password" class="form-control" placeholder="Re-Enter Password">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="modal-form form-check">
-                                    <input type="checkbox" id="privacy">
-                                    <label for="privacy">Accept the Terms and Privacy Policy</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="modal-form">
-                                    <button class="btn btn-primary btn-hover-secondary w-100">Register</button>
-                                </div>
+                    <form class="contact-form respondForm__form row y-gap-20 pt-30" action="{{ route('register') }}"
+                      method="POST">
+                        @csrf
+
+
+                        <div class="col-md-6">
+                            <label class="form-label">Email address *</label>
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                            @error('email')
+                            <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Phone *</label>
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone" required>
+                            @error('phone')
+                            <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Username *</label>
+                            <input type="text" class="form-control" name="name" placeholder="name" required>
+                            @error('name')
+                            <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Password *</label>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            @error('password')
+                            <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Re-Enter Password *</label>
+                            <input type="password" class="form-control" name="password_confirmation"
+                              placeholder="Re-Enter Password" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Role *</label>
+                            <select name="role" class="form-control">
+                                <option value="">Select a role</option>
+                                <option value="1">Customer</option>
+                                <option value="2">Instructor</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input type="checkbox" id="privacy" name="privacy" class="form-check-input" required>
+                                <label for="privacy" class="form-check-label">Accept the Terms and Privacy
+                                    Policy</label>
                             </div>
                         </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Register</button>
+                        </div>
                     </form>
+
 
                 </div>
             </div>

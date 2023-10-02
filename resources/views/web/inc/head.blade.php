@@ -21,7 +21,12 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/vendor/fontawesome-all.min.css">
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/vendor/edumall-icon.css">
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/vendor/bootstrap.min.css">
-
+    {{-- dropify --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css"
+      integrity="sha512-In/+MILhf6UMDJU4ZhDL0R0fEpsp4D3Le23m6+ujDWXwl3whwpucJG1PEmI3B07nyJx+875ccs+yX2CqQJUxUw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Sweet Alert-->
+    <link href="{{ asset('/assets') }}/admin/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/plugins/aos.css">
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/plugins/swiper-bundle.min.css">
