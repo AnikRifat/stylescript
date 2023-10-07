@@ -5,7 +5,7 @@
             <li>
                 <a href="{{ route('user.dashboard') }}">
                     <i class="text-20 icon-discovery me-3"></i>
-                    <span class="text">Dashboard</span>
+                    <span class="text">Profile</span>
                 </a>
             </li>
             {{-- <li>

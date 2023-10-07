@@ -1,19 +1,17 @@
 @extends('web.pages.dashboard.app.app')
-
 @section('user-body')
 <div class="container">
-
     <!-- Dashboard Info Start -->
     <div class="dashboard-info">
         <div class="container">
             <div class="dashboard-user">
-                <div class="dashboard__content bg-blue-4">
+                <div class="dashboard__content">
                     <div class="row pb-4 mb-2">
                         <div class="masthead">
                             <div class="masthead__content">
-                                <h1 class="display-4 fw-bold">Find a Perfect Online Appointment</h1>
 
                                 @if (Auth::user() && Auth::user()->role == 1)
+                                <h1 class="display-4 fw-bold">Find a Perfect Online Appointment</h1>
                                 <div class="mt-4">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -46,7 +44,6 @@
                                 </div>
                                 @endif
                             </div>
-
                         </div>
                     </div>
                     <div class="row">
@@ -64,11 +61,10 @@
                                           aria-selected="false">Basic Information</a>
                                     </li>
                                 </ul>
-
                                 <div class="tab-content" id="myTabsContent">
                                     <div class="tab-pane fade show active" id="user-info" role="tabpanel"
                                       aria-labelledby="user-info-tab">
-                                        <div class="border-top-light pt-3">
+                                        <div class="border-top pt-3">
                                             <form action="{{ route('user.update', Auth::user()->id) }}" method="POST">
                                                 @csrf
                                                 <div class="row g-3">
@@ -98,7 +94,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="basic-info" role="tabpanel"
                                       aria-labelledby="basic-info-tab">
-                                        <div class="border-top-light pt-3">
+                                        <div class="border-top pt-3">
                                             <form
                                               action="@if (Auth::user()->role == 1){{ route('customer.update', $user->customer->id) }}@else{{ route('instructor.update', $user->instructor->id) }}@endif"
                                               class="contact-form row y-gap-30" enctype="multipart/form-data"
@@ -116,13 +112,13 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label
-                                                      class="form-label text-16 lh-1 fw-500 text-dark-1 mb-10">Address</label>
+                                                      class="form-label text-16 lh-1 fw-500 text-dark mb-10">Address</label>
                                                     <input type="text" class="form-control" placeholder="Address"
                                                       name="address"
                                                       value="@if (Auth::user()->role == 1){{ $user->customer->address }}@else{{ $user->instructor->address }}@endif">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="form-label text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                                    <label class="form-label text-16 lh-1 fw-500 text-dark mb-10">
                                                         @if(Auth::user()->role == 1)School Name @else Birthday
                                                         @endif</label>
                                                     <input type="@if (Auth::user()->role == 1)text @else date @endif"
@@ -134,7 +130,7 @@
                                                 @if (Auth::user()->role == 2)
                                                 <div class="col-md-6">
                                                     <label
-                                                      class="form-label text-16 lh-1 fw-500 text-dark-1 mb-10">Current
+                                                      class="form-label text-16 lh-1 fw-500 text-dark mb-10">Current
                                                         Profession</label>
                                                     <select class="form-select" name="profession">
                                                         <option value="Part Time" @if ($user->instructor->profession ==
@@ -150,13 +146,13 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label
-                                                      class="form-label text-16 lh-1 fw-500 text-dark-1 mb-10">Specialist
+                                                      class="form-label text-16 lh-1 fw-500 text-dark mb-10">Specialist
                                                         You Want to Teach</label>
-                                                    <select class="form-select" name="specialist">
-                                                        @foreach ($specialists as $specialist)
-                                                        <option value="{{ $specialist->id }}" @if ($user->
-                                                            instructor->specialist == $specialist->id) selected
-                                                            @endif>{{ $specialist->title }}</option>
+                                                    <select class="form-select" name="subject">
+                                                        @foreach ($subjects as $subject)
+                                                        <option value="{{ $subject->id }}" @if ($user->
+                                                            instructor->subject == $subject->id) selected
+                                                            @endif>{{ $subject->title }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -167,7 +163,6 @@
                                                 </div>
                                             </form>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
