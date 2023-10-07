@@ -87,6 +87,7 @@
                                 <li><a class="active" href="{{ route('index') }}"><span>Home</span></a> </li>
                                 <li><a class="" href="{{ route('course.all') }}"><span>Courses</span></a> </li>
                                 <li><a class="" href="{{ route('product.all') }}"><span>Shop</span></a> </li>
+                                <li><a class="" href="{{ route('custom-design') }}"><span>Custom Design</span></a> </li>
                                 {{-- <li><a class="" href="{{ route('customer') }}"><span>Customer</span></a> </li> --}}
                                 {{-- <li><a class="" href="{{ route('instructor') }}"><span>Instructor</span></a> </li>
                                 --}}

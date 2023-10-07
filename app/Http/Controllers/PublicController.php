@@ -36,6 +36,7 @@ class PublicController extends Controller
 
     public function dashboard()
     {
+        // dd('omk');
         if (Auth::user()->role == 0) {
 
             return view('admin.pages.index');
@@ -67,7 +68,7 @@ class PublicController extends Controller
 
     public function blogDetails($blogId)
     {
-        $blog  = Blog::find($blogId);
+        $blog = Blog::find($blogId);
         $comments = Comments::query()->orderBy('created_at', 'ASC')->get();
         // dd($blog);
         return view('web.pages.blog.details', compact('blog', 'comments'));
@@ -255,5 +256,13 @@ class PublicController extends Controller
         }
         // dd($purchasedData);
         return view('web.pages.dashboard.purchase', compact('purchasedData'));
+    }
+
+
+    public function customDesign()
+    {
+        // $product = Product::find($product);
+
+        return view('web.pages.custom-design.index');
     }
 }

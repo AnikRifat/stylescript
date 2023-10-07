@@ -163,7 +163,7 @@
             <div class="col-sm-4">
                 <!-- Category Start -->
                 <div class="section-btn-02 text-sm-end" data-aos="fade-up" data-aos-duration="1000">
-                    <a class="btn btn-light btn-hover-primary" href="#">View all courses</a>
+                    <a class="btn btn-light btn-hover-primary" href="{{ route('subject.all') }}">View all Subjects</a>
                 </div>
                 <!-- Category End -->
             </div>
@@ -179,7 +179,7 @@
 
                         <!-- Category Item Start -->
                         <div class="category-item">
-                            <a class="category-item__link" href="course-category.html">
+                            <a class="category-item__link" href="{{ route('subject.details',$subject->id) }}">
                                 <div class="category-item__image">
                                     <img src="{{ asset('') }}uploads/subjects/{{ $subject->image }}" alt="Category"
                                       width="258" height="318">
@@ -222,7 +222,7 @@
             <div class="col-lg-6">
                 <div class="courses-tab-menu" data-aos="fade-up" data-aos-duration="1000">
                     <ul class="nav justify-content-lg-end">
-                        <li><button class="active" data-bs-toggle="tab" data-bs-target="#tab1">All</button>
+                        <li><button class="active"><a href="{{route('course.all')}}">All Courses</a></button>
                         </li>
                     </ul>
                 </div>

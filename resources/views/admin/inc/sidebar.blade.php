@@ -60,6 +60,20 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
+                <span key="t-Shop">Custom Design Management</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('users.index') }}" key="t-list">All Catalogs</a></li>
+                <li><a href="{{ route('users.customer') }}" key="t-list">Gravators</a></li>
+                <li><a href="{{ route('users.customer') }}" key="t-list">Orders</a></li>
+
+
+
+            </ul>
+        </li>
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
                 <span key="t-Shop">Ledger sheets</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">

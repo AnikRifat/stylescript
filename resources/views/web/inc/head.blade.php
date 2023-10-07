@@ -40,4 +40,5 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/style.css">
 
+    @stack('style')
 </head>

@@ -15,7 +15,7 @@ class AttendanceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+public function index()
     {
         $attendances = Attendance::orderBy('id', 'DESC')->get();
         // dd($attendances);
@@ -49,13 +49,13 @@ class AttendanceController extends Controller
         $data['user_type'] = $user->role;
         $data['date'] = Carbon::now()->today()->toDateString();
         //
-        
+
         $existingAttendance = Attendance::where('course_id', $data['course_id'])
             ->where('date',  $data['date'])
             ->where('user_type', $user->role)
             ->get();
 
-            
+
 
         if ($existingAttendance->count() > 0) {
             return redirect()->back()->with('error', 'Attendace Already taken');
