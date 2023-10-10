@@ -140,8 +140,7 @@
                                     <select id="designtype">
 
                                         @foreach ($customdesign->catalogs as $k => $data)
-                                            <option
-                                                value="{{ asset('') }}assets/design/img/mens_longsleeve_front.png"
+                                            <option value="{{ asset('storage/app/public/' . $data->front_image) }}"
                                                 @if ($k == 0) selected @endif>
                                                 {{ $data->name }}</option>
                                         @endforeach
@@ -272,13 +271,14 @@
                             </div>
                         </div>
                     </div>
+
                     <!--	EDITOR      -->
                     <button id="flipback" type="button" class="btn" title="Rotate View"><i
                             class="icon-retweet" style="height:19px;"></i></button>
                     <div id="shirtDiv" class="page"
                         style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
                         <img name="tshirtview" id="tshirtFacing"
-                            src="{{ asset('') }}assets/design/img/crew_front.png">
+                            src="{{ asset('storage/app/public/' . $firstcatalog->front_image) }}">
                         <div id="drawingArea"
                             style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
                             <canvas id="tcanvas" width=200 height="400" class="hover"
@@ -383,25 +383,13 @@
             }
 
             switch (valueSelect) {
-                case "{{ asset('') }}assets/design/img/crew_front.png":
-                    swapImages.call(this, "{{ asset('') }}assets/design/img/crew_front.png",
-                        "{{ asset('') }}assets/design/img/crew_back.png");
+                @foreach ($customdesign->catalogs as $catalog)
+                    case "{{ asset('storage/app/public/' . $catalog->front_image) }}":
+                    swapImages.call(this, "{{ asset('storage/app/public/' . $catalog->front_image) }}",
+                        "{{ asset('storage/app/public/' . $catalog->back_image) }}");
                     break;
+                @endforeach
 
-                case "{{ asset('') }}assets/design/img/mens_longsleeve_front.png":
-                    swapImages.call(this, "{{ asset('') }}assets/design/img/mens_longsleeve_front.png",
-                        "{{ asset('') }}assets/design/img/mens_longsleeve_back.png");
-                    break;
-
-                case "{{ asset('') }}assets/design/img/mens_tank_front.png":
-                    swapImages.call(this, "{{ asset('') }}assets/design/img/mens_tank_front.png",
-                        "{{ asset('') }}assets/design/img/mens_tank_back.png");
-                    break;
-
-                case "{{ asset('') }}assets/design/img/mens_hoodie_front.png":
-                    swapImages.call(this, "{{ asset('') }}assets/design/img/mens_hoodie_front.png",
-                        "{{ asset('') }}assets/design/img/mens_hoodie_back.png");
-                    break;
 
                 default:
                     // Handle other cases or provide a default behavior

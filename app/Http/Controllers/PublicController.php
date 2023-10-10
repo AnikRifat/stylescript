@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Catalog;
 use App\Models\Comments;
 use App\Models\Course;
 use App\Models\CustomDesign;
@@ -272,7 +273,8 @@ class PublicController extends Controller
     {
         // $product = Product::find($product);
         $customdesign = CustomDesign::find($id);
-        // dd($customdesign);
-        return view('web.pages.custom-design.details', compact('customdesign'));
+        $firstcatalog = Catalog::where('custom_design_id', $id)->first();
+        // dd($firstcatalog);
+        return view('web.pages.custom-design.details', compact('customdesign', 'firstcatalog'));
     }
 }
