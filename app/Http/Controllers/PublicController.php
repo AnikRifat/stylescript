@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Comments;
 use App\Models\Course;
+use App\Models\CustomDesign;
 use App\Models\Customer;
 use App\Models\Duration;
 use App\Models\Order;
@@ -262,7 +263,16 @@ class PublicController extends Controller
     public function customDesign()
     {
         // $product = Product::find($product);
+        $customdesigns = CustomDesign::all();
+        // dd($customdesign);
+        return view('web.pages.custom-design.index', compact('customdesigns'));
+    }
 
-        return view('web.pages.custom-design.index');
+    public function customDesignDetails($id)
+    {
+        // $product = Product::find($product);
+        $customdesign = CustomDesign::find($id);
+        // dd($customdesign);
+        return view('web.pages.custom-design.details', compact('customdesign'));
     }
 }

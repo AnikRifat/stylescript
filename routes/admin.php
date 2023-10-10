@@ -112,7 +112,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/', [CustomDesignController::class, 'index'])->name('custom_designs.index');
         Route::get('/create', [CustomDesignController::class, 'create'])->name('custom_designs.create');
         Route::post('/', [CustomDesignController::class, 'store'])->name('custom_designs.store');
-        Route::get('/{custom_design}', [CustomDesignController::class, 'show'])->name('custom_designs.show');
+        Route::get('/{custom_design}', [CustomDesignController::class, 'show'])->name('custom_designs.view');
         Route::get('/{custom_design}/edit', [CustomDesignController::class, 'edit'])->name('custom_designs.edit');
         Route::put('/{custom_design}', [CustomDesignController::class, 'update'])->name('custom_designs.update');
         Route::get('/{custom_design}', [CustomDesignController::class, 'destroy'])->name('custom_designs.destroy');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomDesignsTable extends Migration
+class CreateCatalogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCustomDesignsTable extends Migration
      */
     public function up()
     {
-        Schema::create('custom_designs', function (Blueprint $table) {
+        Schema::create('catalogs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image');
-            $table->json('status')->default('1');
+            $table->foreignId('custom_design_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('front_image');
+            $table->string('back_image');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateCustomDesignsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('custom_designs');
+        Schema::dropIfExists('catalogs');
     }
 }

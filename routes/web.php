@@ -4,11 +4,12 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CustomDesignController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/get-catalogs/{id}',  [CustomDesignController::class, 'getcatalog'])->name('getcatalog');
 Route::get('/mail', function () {
 });
 
@@ -48,6 +49,7 @@ Route::post('/search', [SearchController::class, 'search'])->name('search'); // 
 Route::get('/search/view', [SearchController::class, 'result'])->name('result'); // show search
 
 Route::get('/custom-design', [PublicController::class, 'customDesign'])->name('custom-design');
+Route::get('/custom-design/{id}', [PublicController::class, 'customDesignDetails'])->name('custom-design.details');
 Route::middleware('auth')->group(function () {
     Route::post('/comment', [CommentsController::class, 'store'])->name('comment.store');
 
