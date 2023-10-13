@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
             SubjectSeeder::class,
             InstructorSeeder::class,
             customerSeeder::class,
-            CourseSeeder::class,
+            // CourseSeeder::class,
             ProductSeeder::class,
             DurationSeeder::class,
-            OrderSeeder::class,
-            TransactionSeeder::class
+            // OrderSeeder::class,
+            // TransactionSeeder::class
         ]);
     }
 }

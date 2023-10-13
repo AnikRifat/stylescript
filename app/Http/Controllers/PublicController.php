@@ -277,4 +277,22 @@ class PublicController extends Controller
         // dd($firstcatalog);
         return view('web.pages.custom-design.details', compact('customdesign', 'firstcatalog'));
     }
+
+    public function saveImage(Request $request)
+    {
+        // dd($request->all());
+        $imageData = $request->input('imageData');
+        $imageData = str_replace('data:image/png;base64,', '', $imageData);
+        // $imageData = base64_decode($imageData);
+        return $imageData;
+        $imageName = 'captured_image_' . time() . '.png';
+        $imagePath = public_path('images/' . $imageName);
+
+        file_put_contents($imagePath, $imageData);
+
+        // Save $imagePath to your database if needed
+
+        return response('Image saved successfully', 200);
+    }
+
 }

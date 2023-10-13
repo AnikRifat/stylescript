@@ -10,7 +10,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('') }}assets/design/js/fabric.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.2.2/html2canvas.min.js"></script>
 
     <!-- Le styles -->
     <link type="text/css" rel="stylesheet" href="{{ asset('') }}assets/design/css/jquery.miniColors.css" />
@@ -144,15 +144,6 @@
                                                 @if ($k == 0) selected @endif>
                                                 {{ $data->name }}</option>
                                         @endforeach
-                                        {{-- <option value="{{ asset('') }}assets/design/img/crew_front.png"
-                                            selected="selected">Short Sleeve Shirts
-                                        </option>
-                                        <option value="{{ asset('') }}assets/design/img/mens_longsleeve_front.png">
-                                            Long Sleeve Shirts</option>
-                                        <option value="{{ asset('') }}assets/design/img/mens_hoodie_front.png">
-                                            Hoodies</option>
-                                        <option value="{{ asset('') }}assets/design/img/mens_tank_front.png">Tank
-                                            tops</option> --}}
                                     </select>
                                     <!--						      </p>-->
                                 </div>
@@ -263,8 +254,6 @@
                                             class="icon-fast-backward rotate" style="height:19px;"></i></button>
                                     <button class="btn" id="send-to-back" title="Send to Back"><i
                                             class="icon-fast-forward rotate" style="height:19px;"></i></button>
-                                    <button id="flip" type="button" class="btn" title="Show Back View"><i
-                                            class="icon-retweet" style="height:19px;"></i></button>
                                     <button id="remove-selected" class="btn" title="Delete selected item"><i
                                             class="icon-trash" style="height:19px;"></i></button>
                                 </div>
@@ -275,72 +264,101 @@
                     <!--	EDITOR      -->
                     <button id="flipback" type="button" class="btn" title="Rotate View"><i
                             class="icon-retweet" style="height:19px;"></i></button>
-                    <div id="shirtDiv" class="page"
-                        style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
-                        <img name="tshirtview" id="tshirtFacing"
-                            src="{{ asset('storage/app/public/' . $firstcatalog->front_image) }}">
-                        <div id="drawingArea"
-                            style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
-                            <canvas id="tcanvas" width=200 height="400" class="hover"
-                                style="-webkit-user-select: none;"></canvas>
+                    <div class="maincanvs front-view" id="front-view">
+                        <div id="shirtDiv" class="page"
+                            style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
+                            <img name="tshirtview" id="tshirtFacing"
+                                src="{{ asset('storage/app/public/' . $firstcatalog->front_image) }}">
+                            <div id="drawingArea"
+                                style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+                                <canvas id="tcanvas" width=200 height="400" class="hover"
+                                    style="-webkit-user-select: none;"></canvas>
+                            </div>
                         </div>
                     </div>
-                    <!--					<div id="shirtBack" class="page" style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255); display:none;">-->
-                    <!--						<img src="{{ asset('') }}assets/design/img/crew_back.png"></img>-->
-                    <!--						<div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">					-->
-                    <!--							<canvas id="backCanvas" width=200 height="400" class="hover" style="-webkit-user-select: none;"></canvas>-->
-                    <!--						</div>-->
-                    <!--					</div>						-->
-
                     <!--	/EDITOR		-->
                 </div>
 
                 <div class="span3">
                     <div class="well">
                         <h3>Select Sizes</h3>
-                        <p>
-                        <table class="table">
-                            <tr>
-                                <td><input type="checkbox">&emsp;S</td>
-                                <td align="right"><input min="0" style="width: 40px;" value="1"
-                                        type="number"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox">&emsp;M</td>
-                                <td align="right"><input min="0" style="width: 40px;" placeholder="1"
-                                        type="number">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox">&emsp;L</td>
-                                <td align="right"><input min="0" style="width: 40px;" placeholder="1"
-                                        type="number">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox">&emsp;XL</td>
-                                <td align="right"><input min="0" style="width: 40px;" placeholder="1"
-                                        type="number">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox">&emsp;XXL</td>
-                                <td align="right"><input min="0" style="width: 40px;" placeholder="1"
-                                        type="number">
-                                </td>
-                            </tr>
-                        </table>
-                        </p>
-                        <button type="button" class="btn btn-large btn-block btn-success" name="addToTheBag"
-                            id="addToTheBag">Add to bag <i class="icon-briefcase icon-white"></i></button>
+                        <form id="sizeForm">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="size[]" value="S">
+                                            S
+                                        </label>
+                                    </td>
+                                    <td align="right">
+                                        <input min="0" style="width: 40px;" value="0" type="number"
+                                            name="quantity[]">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="size[]" value="M">
+                                            M
+                                        </label>
+                                    </td>
+                                    <td align="right">
+                                        <input min="0" style="width: 40px;" value="0" type="number"
+                                            name="quantity[]">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="size[]" value="L">
+                                            L
+                                        </label>
+                                    </td>
+                                    <td align="right">
+                                        <input min="0" style="width: 40px;" value="0" type="number"
+                                            name="quantity[]">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="size[]" value="XL">
+                                            XL
+                                        </label>
+                                    </td>
+                                    <td align="right">
+                                        <input min="0" style="width: 40px;" value="0" type="number"
+                                            name="quantity[]">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="size[]" value="XXL">
+                                            XXL
+                                        </label>
+                                    </td>
+                                    <td align="right">
+                                        <input min="0" style="width: 40px;" value="0" type="number"
+                                            name="quantity[]">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button type="button" class="btn btn-large btn-block btn-success" name="submitdesign"
+                            id="submitdesign">Add to bag <i class="icon-briefcase icon-white"></i></button>
                     </div>
                 </div>
+
 
             </div>
 
         </section>
     </div>
-
+    <script src="{{ asset('') }}assets/design/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ asset('') }}assets/design/js/tshirtEditor.js"></script>
+    <script type="text/javascript" src="{{ asset('') }}assets/design/js/jquery.miniColors.min.js"></script>
     <!-- Footer ================================================== -->
     <script>
         $(document).ready(function() {
@@ -362,23 +380,39 @@
         $('#flipback').click(function() {
             function swapImages(frontImage, backImage) {
                 if ($(this).attr("data-original-title") == "Show Back View") {
+                    html2canvas(document.getElementById('back-view')).then(function(canvas) {
+                        var image_back = canvas.toDataURL('image/png');
+                        // console.log('data2', image_back);
+                    });
                     $(this).attr('data-original-title', 'Show Front View');
                     $("#tshirtFacing").attr("src", frontImage);
+
+                    $('#back-view').attr('id', 'front-view');
                     a = JSON.stringify(canvas);
                     canvas.clear();
                     try {
                         var json = JSON.parse(b);
                         canvas.loadFromJSON(b);
                     } catch (e) {}
+
+
+
                 } else {
                     $(this).attr('data-original-title', 'Show Back View');
+                    html2canvas(document.getElementById('front-view')).then(function(canvas) {
+                        var image_front = canvas.toDataURL('image/png');
+                        // console.log('data1', image_front);
+                    });
                     $("#tshirtFacing").attr("src", backImage);
+                    $('#front-view').attr('id', 'back-view');
+
                     b = JSON.stringify(canvas);
                     canvas.clear();
                     try {
                         var json = JSON.parse(a);
                         canvas.loadFromJSON(a);
                     } catch (e) {}
+
                 }
             }
 
@@ -402,9 +436,63 @@
             }, 200);
         });
     </script>
-    <script src="{{ asset('') }}assets/design/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ asset('') }}assets/design/js/tshirtEditor.js"></script>
-    <script type="text/javascript" src="{{ asset('') }}assets/design/js/jquery.miniColors.min.js"></script>
+    <script>
+        document.getElementById('submitdesign').addEventListener('click', async function() {
+            try {
+                const image_frontCanvas = await html2canvas(document.getElementById('front-view'));
+                const image_front = image_frontCanvas.toDataURL('image/png');
+
+                const image_backCanvas = await html2canvas(document.getElementById('back-view'));
+                const image_back = image_backCanvas.toDataURL('image/png');
+
+                const sizeRows = document.querySelectorAll('table.table tr');
+                const selectedSizes = {};
+
+                sizeRows.forEach(row => {
+                    const checkbox = row.querySelector('input[type="checkbox"]');
+                    const size = checkbox.nextSibling.textContent.trim();
+                    const quantityInput = row.querySelector('input[type="number"]');
+                    const quantity = parseInt(quantityInput.value);
+
+                    if (checkbox.checked && quantity > 0) {
+                        selectedSizes[size] = quantity;
+                    }
+                });
+
+                const imageData = {
+                    user_id: 1,
+                    item_id: {{ $customdesign->id }},
+                    image_front: image_front,
+                    image_back: image_back,
+                    selectedSizes: selectedSizes,
+                };
+
+                console.log(imageData);
+
+                var endpoint = "{{ url('sent-purchase-request') }}";
+
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(imageData),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('API response:', data);
+                } else {
+                    console.error('API error:', response);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+
+
+
 
 </body>
 
