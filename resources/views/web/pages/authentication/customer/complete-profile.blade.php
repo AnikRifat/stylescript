@@ -124,11 +124,11 @@
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="specialist" class="form-label">Specialist You Want to
+                                            <label for="subject" class="form-label">Specialist You Want to
                                                 Teach</label>
-                                            <select name="specialist" class="form-select">
-                                                @foreach ($specialists as $specialist)
-                                                <option value="{{$specialist->id}}">{{$specialist->title}}</option>
+                                            <select name="subject" class="form-select">
+                                                @foreach ($subjects as $subject)
+                                                <option value="{{$subject->id}}">{{$subject->title}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
