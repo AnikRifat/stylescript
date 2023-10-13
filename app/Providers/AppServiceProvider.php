@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Content;
 use App\Models\Duration;
 use App\Models\Subject;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,7 +28,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $content =  Content::find(1)->first();
+
+        Paginator::useBootstrap();
+
+        $content = Content::find(1)->first();
         view()->share('content', $content);
 
 

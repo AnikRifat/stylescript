@@ -10,28 +10,28 @@
                 <div class="header-top-bar-wrap__info">
                     <ul class="header-top-bar-wrap__info-list">
                         <li><a href="tel:+8819906886"><i class="fas fa-phone"></i> <span
-                                  class="info-text">{{ $content->website_phone }}</span></a></li>
+                                    class="info-text">{{ $content->website_phone }}</span></a></li>
                         <li><a href="mailto:{{ $content->website_email }}"><i class="far fa-envelope"></i> <span
-                                  class="info-text">{{ $content->website_email }}</span></a></li>
+                                    class="info-text">{{ $content->website_email }}</span></a></li>
                     </ul>
                 </div>
 
                 <div class="header-top-bar-wrap__info d-sm-flex">
-                    @if(Auth::user())
-                    <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
-                        @if(Auth::user()->role == 0)
-                        <li><a class="text-light" href="{{ route('login') }}">Dashboard</a></li>
-                        @else
-                        <li><a class="text-light" href="{{ route('user.dashboard') }}">Dashboard</a></li>
-                        @endif
+                    @if (Auth::user())
+                        <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
+                            @if (Auth::user()->role == 0)
+                                <li><a class="text-light" href="{{ route('login') }}">Dashboard</a></li>
+                            @else
+                                <li><a class="text-light" href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                            @endif
 
-                    </ul>
+                        </ul>
                     @else
-                    <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
-                        <li><button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></li>
-                        <li><button data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-                        </li>
-                    </ul>
+                        <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
+                            <li><button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></li>
+                            <li><button data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                            </li>
+                        </ul>
                     @endif
 
                     <ul class="header-top-bar-wrap__info-social">
@@ -61,8 +61,8 @@
                 <!-- Header Logo Start -->
                 <div class="header-logo">
                     <a class="header-logo__logo" href="{{ route('index') }}"><img
-                          src="{{ asset('') }}uploads/content/{{ $content->website_logo }}" width="296" height="64"
-                          alt="Logo"></a>
+                            src="{{ asset('') }}uploads/content/{{ $content->website_logo }}" width="296"
+                            height="64" alt="Logo"></a>
                 </div>
                 <!-- Header Logo End -->
 
@@ -73,9 +73,10 @@
 
                     <!-- Header Search Start -->
                     <div class="header-serach">
-                        <form action="#">
-                            <input type="text" class="header-serach__input" placeholder="Search...">
-                            <button class="header-serach__btn"><i class="fas fa-search"></i></button>
+                        <form action="{{ route('search') }}" method="POST">
+                            @csrf
+                            <input type="text" name="courses" class="header-serach__input" placeholder="Search...">
+                            <button type="submit" class="header-serach__btn"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
                     <!-- Header Search End -->
@@ -87,7 +88,8 @@
                                 <li><a class="active" href="{{ route('index') }}"><span>Home</span></a> </li>
                                 <li><a class="" href="{{ route('course.all') }}"><span>Courses</span></a> </li>
                                 <li><a class="" href="{{ route('product.all') }}"><span>Shop</span></a> </li>
-                                <li><a class="" href="{{ route('custom-design') }}"><span>Custom Design</span></a> </li>
+                                <li><a class="" href="{{ route('custom-design') }}"><span>Custom
+                                            Design</span></a> </li>
                                 {{-- <li><a class="" href="{{ route('customer') }}"><span>Customer</span></a> </li> --}}
                                 {{-- <li><a class="" href="{{ route('instructor') }}"><span>Instructor</span></a> </li>
                                 --}}
@@ -102,7 +104,7 @@
                     <!-- Header Mobile Toggle Start -->
                     <div class="header-toggle">
                         <button class="header-toggle__btn d-xl-none" data-bs-toggle="offcanvas"
-                          data-bs-target="#offcanvasMobileMenu">
+                            data-bs-target="#offcanvasMobileMenu">
                             <span class="line"></span>
                             <span class="line"></span>
                             <span class="line"></span>

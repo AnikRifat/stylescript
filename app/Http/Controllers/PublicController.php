@@ -121,7 +121,7 @@ class PublicController extends Controller
     }
     public function products()
     {
-        $products = Product::where('status', '1')->get();
+        $products = Product::where('status', '1')->paginate(20);
         return view('web.pages.product.index', compact('products'));
     }
 
@@ -133,7 +133,7 @@ class PublicController extends Controller
     }
     public function courses()
     {
-        $courses = Course::where('status', '1')->get();
+        $courses = Course::where('status', '1')->paginate(12);
         // dd($courses);
         return view('web.pages.courses.all', compact('courses'));
     }
