@@ -7,7 +7,6 @@ use App\Models\Catalog;
 use App\Models\Comments;
 use App\Models\Course;
 use App\Models\CustomDesign;
-use App\Models\Customer;
 use App\Models\Duration;
 use App\Models\Order;
 use App\Models\Product;
@@ -50,12 +49,11 @@ class PublicController extends Controller
     public function chart()
     {
         if (Auth::user()->role == 0) {
-            $customers = User::where('role', 1)->where('allow', 1)->get();
+            $users = User::all();
 
-            $hsc = Customer::where('current_class', 'Hsc')->get();
-            $ssc = Customer::where('current_class', 'SSC')->get();
 
-            return view('admin.pages.transaction.chart', compact('customers', 'hsc', 'ssc'));
+
+            return view('admin.pages.transaction.chart', compact('users'));
         } else {
             return redirect()->route('user.dashboard');
         }
