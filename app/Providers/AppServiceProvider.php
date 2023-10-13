@@ -30,7 +30,6 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Paginator::useBootstrap();
-
         $content = Content::find(1)->first();
         view()->share('content', $content);
 
