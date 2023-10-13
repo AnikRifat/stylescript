@@ -42,7 +42,7 @@
                                         <p class="text-muted text-truncate">Instructor</p>
                                     </div>
                                     <div class="col-4">
-                                        <h5 class="mb-0">{{ $users->where('role', 2)->count() }}</h5>
+                                        <h5 class="mb-0">{{ $users->where('role', 1)->count() }}</h5>
                                         <p class="text-muted text-truncate">Customer</p>
                                     </div>
                                     <div class="col-4">
