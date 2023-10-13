@@ -25,33 +25,33 @@ class UserSeeder extends Seeder
         ]);
 
         //  Create Teachers
-        // for ($i = 1; $i <= 10; $i++) {
-        //     DB::table('users')->insert([
-        //         'name' => 'INSTRUCTOR ' . $i,
-        //         'email' => 'instructor' . $i . '@email.com',
-        //         'phone' => '01567841' . $i,
-        //         'password' => Hash::make('password'),
-        //         'role' => 2,
-        //         'allow' => 1,
-        //         'complete' => 1,
-        //         'created_at' => Carbon::now(),
-        //         'updated_at' => Carbon::now(),
-        //     ]);
-        // }
+        for ($i = 1; $i <= 10; $i++) {
+            DB::table('users')->insert([
+                'name' => 'INSTRUCTOR ' . $i,
+                'email' => 'instructor' . $i . '@email.com',
+                'phone' => '01567841' . $i,
+                'password' => Hash::make('password'),
+                'role' => 2,
+                'allow' => 1,
+                'complete' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
 
         //  Create Students (40 students)
-        // for ($i = 1; $i <= 40; $i++) {
-        //     DB::table('users')->insert([
-        //         'name' => 'Customer ' . $i,
-        //         'email' => 'customer' . $i . '@email.com',
-        //         'phone' => '01567875' . $i,
-        //         'password' => Hash::make('password'),
-        //         'role' => 1,
-        //         'allow' => 1,
-        //         'complete' => 1,
-        //         'created_at' => Carbon::now(),
-        //         'updated_at' => Carbon::now(),
-        //     ]);
-        // }
+        for ($i = 1; $i <= 40; $i++) {
+            DB::table('users')->insert([
+                'name' => 'Customer ' . $i,
+                'email' => 'customer' . $i . '@email.com',
+                'phone' => '01567875' . $i,
+                'password' => Hash::make('password'),
+                'role' => 1,
+                'allow' => 1,
+                'complete' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 }
