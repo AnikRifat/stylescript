@@ -89,7 +89,7 @@
                                         </div>
                                     </form>
                                     @else
-                                    <form action="{{ route('doctor.store') }}" method="POST" class="row g-3"
+                                    <form action="{{ route('instructor.store') }}" method="POST" class="row g-3"
                                       enctype="multipart/form-data">
                                         @csrf
                                         <div class="col-md-6">
