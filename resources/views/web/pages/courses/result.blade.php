@@ -128,20 +128,33 @@
                     </div>
                 </div>
 
-                @if ($products->count() > 0)
-                    @include('web.component.product')
-                @else
-                    <div class="d-flex items-center justify-between bg-info-1 pl-30 pr-20 py-30 rounded-8">
-                        <div class="text-info-2 lh-1 fw-500">No Search Related products</div>
+                    @if ($products->count() > 0)
+                        <div class="row row-cols-xl-5 gy-6">
+                            @foreach ($products as $data)
+                                <div class="col-xl col-lg-3 col-md-4 col-sm-6">
 
-                    </div>
-                @endif
+                                    <!-- Product Item Start -->
+                                    @include('web.component.product')
+                                    <!-- Product Item End -->
+
+                                </div>
+                            @endforeach
+
+
+                        </div>
+             
+            @else
+                <div class="d-flex items-center justify-between bg-info-1 pl-30 pr-20 py-30 rounded-8">
+                    <div class="text-info-2 lh-1 fw-500">No Search Related products</div>
+
+                </div>
+    @endif
 
 
 
 
-            </div>
+    </div>
 
-        </section>
+    </section>
     @endif
 @endsection

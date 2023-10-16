@@ -41,8 +41,8 @@ class SearchController extends Controller
             ->where('title', 'like', '%' . $request->courses . '%')
             ->orWhere('description', 'like', '%' . $request->courses . '%')
             ->get();
-        $products = Product::latest()
-            ->where('name', 'like', '%' . $request->courses . '%')->orWhere('description', 'like', '%' . $request->courses . '%')->get();
+        $products = Product::latest()->where('name', 'like', '%' . $request->courses . '%')->orWhere('description', 'like', '%' . $request->courses . '%')->get();
+
         $instructors = false;
         return view('web.pages.courses.result', compact('courses', 'products', 'instructors'));
     }
