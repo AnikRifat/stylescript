@@ -16,13 +16,14 @@
                 <li><a href="{{ route('users.customer') }}" key="t-list">customer</a></li>
                 <li><a href="{{ route('users.customer.confirmation') }}" key="t-list">customer confirmation</a></li>
                 <li><a href="{{ route('users.instructor') }}" key="t-list">instructor</a></li>
-                <li><a href="{{ route('users.instructor.confirmation') }}" key="t-list">instructor confirmation</a></li>
+                <li><a href="{{ route('users.instructor.confirmation') }}" key="t-list">instructor confirmation</a>
+                </li>
 
 
             </ul>
         </li>
         {{-- start - attendance --}}
-        <li>
+        {{-- <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
                 <span key="t-attendance">Attendance</span>
@@ -32,7 +33,7 @@
 
 
             </ul>
-        </li>
+        </li> --}}
         {{-- End - attendance --}}
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
