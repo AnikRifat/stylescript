@@ -66,11 +66,15 @@ class OrderController extends Controller
         ]);
 
 
-        $ifordered = Order::query()->where('type', $data['type'])->where('item_id', $data['item_id'])->where('user_id', Auth::user()->id)->get();
 
-        if ($ifordered->count() > 0) {
-            return redirect()->back()->with('error', 'You Have Already Purchased This Item');
+
+        if ($data['type'] == 1) {
+            $ifordered = Order::query()->where('type', $data['type'])->where('item_id', $data['item_id'])->where('user_id', Auth::user()->id)->get();
+            if ($ifordered->count() > 0) {
+                return redirect()->back()->with('error', 'You Have Already Purchased This Item');
+            }
         }
+
 
         $profit = 25;
         $data['user_id'] = Auth::user()->id;
@@ -213,8 +217,8 @@ class OrderController extends Controller
         $order = Order::find($orders);
         $transaction = Transaction::where('order_id', $order->id)->first();
 
-        $orderdelete =  $order->delete();
-        $transactiondelete =  $transaction->delete();
+        $orderdelete = $order->delete();
+        $transactiondelete = $transaction->delete();
 
 
         if ($orderdelete && $transactiondelete) {
@@ -257,7 +261,6 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function Inactive(Order $order)
-
     {
         // dd($order->status);
         $order->status = '0';
