@@ -75,18 +75,18 @@ class CourseController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */ public function store(Request $request)
+     */public function store(Request $request)
     {
         // dd($request->all());
         $data = $request->validate([
             'title' => 'required',
             'price' => 'numeric|required',
             'description' => 'required',
-            'class_id' => 'required',
             'subject_id' => 'required',
             'creator_id' => 'required',
             'duration' => 'required',
-            'image' => 'required|image|max:2048', // max file size of 2MB
+            'image' => 'required|image|max:2048',
+            // max file size of 2MB
         ]);
 
         $image = $request->file('image');
@@ -137,8 +137,8 @@ class CourseController extends Controller
             ->first();
         //dd($courses);
         $cart = new CART();
-        $cart->name     = $courses->name;
-        $cart->user_id  = $courses->user_id;
+        $cart->name = $courses->name;
+        $cart->user_id = $courses->user_id;
         $cart->course_id = $courses->id;
         $cart->save();
 
@@ -275,7 +275,6 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function Inactive(Course $course)
-
     {
         // dd($course->status);
         $course->status = '0';

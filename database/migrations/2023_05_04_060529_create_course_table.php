@@ -18,7 +18,6 @@ class CreateCourseTable extends Migration
             $table->string('title');
             $table->string('price');
             $table->longtext('description');
-            $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('subject_id');
             $table->unsignedBigInteger('creator_id');
             $table->string('meeting_link')->nullable();

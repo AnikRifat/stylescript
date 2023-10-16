@@ -17,7 +17,7 @@ class Course extends Model
         'title',
         'price',
         'description',
-        'class_id',
+        // 'class_id',
         'subject_id',
         'creator_id',
         'meeting_link',
