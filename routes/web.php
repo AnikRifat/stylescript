@@ -9,9 +9,9 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\PurchaseRequestController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
-use App\Models\PurchaseRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,9 +50,10 @@ Route::post('/search', [SearchController::class, 'search'])->name('search'); // 
 Route::get('/search/view', [SearchController::class, 'result'])->name('result'); // show search
 
 Route::get('/custom-design', [PublicController::class, 'customDesign'])->name('custom-design');
-Route::post('/sent-purchase-request', [PurchaseRequestController::class, 'store']);
-Route::get('/custom-design/{id}', [PublicController::class, 'customDesignDetails'])->name('custom-design.details');
+
 Route::middleware('auth')->group(function () {
+    Route::post('/sent-purchase-request', [PurchaseRequestController::class, 'store'])->name('design.store');
+    Route::get('/custom-design/{id}', [PublicController::class, 'customDesignDetails'])->name('custom-design.details');
     Route::post('/comment', [CommentsController::class, 'store'])->name('comment.store');
 
     Route::post('store/customer-info', [CustomerController::class, 'store'])->name('customer.store');

@@ -11,6 +11,7 @@ use App\Http\Controllers\DurationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\PurchaseRequestController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
@@ -109,6 +110,8 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     Route::prefix('custom_designs')->group(function () {
         // Blog-Routes
+        Route::get('/purchase-requests', [PurchaseRequestController::class, 'index'])->name('purchase_request.list');
+        Route::get('/purchase-requests/delete', [PurchaseRequestController::class, 'destroy'])->name('purchase_request.delete');
         Route::get('/', [CustomDesignController::class, 'index'])->name('custom_designs.index');
         Route::get('/create', [CustomDesignController::class, 'create'])->name('custom_designs.create');
         Route::post('/', [CustomDesignController::class, 'store'])->name('custom_designs.store');
@@ -118,6 +121,14 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/{custom_design}', [CustomDesignController::class, 'destroy'])->name('custom_designs.destroy');
         Route::get('/active/{custom_design}', [CustomDesignController::class, 'active'])->name('custom_designs.active');
         Route::get('/inactive/{custom_design}', [CustomDesignController::class, 'inactive'])->name('custom_designs.inactive');
+    });
+
+
+    Route::prefix('purchase_requests')->group(function () {
+        // Blog-Routes
+        Route::get('/', [PurchaseRequestController::class, 'index'])->name('purchase_requests.index');
+        Route::post('/delete/{purchaseRequest}', [PurchaseRequestController::class, 'destroy'])->name('purchase_requests.destroy');
+
     });
     Route::prefix('attendances')->group(function () {
         // attendance-Routes
@@ -203,4 +214,3 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::put('/contact/{content}', [ContentController::class, 'updateContact'])->name('contact.update');
     });
 });
-

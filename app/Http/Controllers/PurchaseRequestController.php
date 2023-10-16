@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PurchaseRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PurchaseRequestController extends Controller
 {
@@ -14,7 +15,10 @@ class PurchaseRequestController extends Controller
      */
     public function index()
     {
-        //
+        $purchase_requests = PurchaseRequest::all();
+
+
+        return view('admin.pages.custom-design.purchase-request', compact('purchase_requests'));
     }
 
     /**
@@ -35,7 +39,21 @@ class PurchaseRequestController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // Handle the POST request data, including the data in $request->input()
+        // dd($request->all());
+        // Create a new PurchaseRequest instance
+        $imageData = $request->all();
+        $purchaseRequest = new PurchaseRequest([
+            'user_id' => Auth::user()->id,
+            'item_id' => $imageData['item_id'],
+            'image_front' => $imageData['image_front'],
+            'image_back' => $imageData['image_back'],
+            'sizes' => $imageData['sizes'],
+        ]);
+        // dd($purchaseRequest);
+        $purchaseRequest->save();
+        return redirect()->route('index')->with('success', 'Custoim design stored successfully');
+        // return response()->json(['message' => 'Purchase request created successfully'], 201);
     }
 
     /**
@@ -80,6 +98,8 @@ class PurchaseRequestController extends Controller
      */
     public function destroy(PurchaseRequest $purchaseRequest)
     {
-        //
+        $purchaseRequest->delete();
+
+        return back()->with('success', 'Deleted successfully');
     }
 }

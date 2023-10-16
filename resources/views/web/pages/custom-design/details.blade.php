@@ -354,6 +354,14 @@
 
             </div>
 
+            <form action="{{ route('design.store') }}" method="POST" id="purchaseForm">
+                @csrf
+                <input type="number" id="design_item_id" name="item_id" value="">
+                <input type="text" id="design_image_front" name="image_front" value="">
+                <input type="text" id="design_image_back" name="image_back" value="">
+                <input type="text" id="design_sizes" name="sizes" value="">
+
+            </form>
         </section>
     </div>
     <script src="{{ asset('') }}assets/design/js/bootstrap.min.js"></script>
@@ -361,10 +369,13 @@
     <script type="text/javascript" src="{{ asset('') }}assets/design/js/jquery.miniColors.min.js"></script>
     <!-- Footer ================================================== -->
     <script>
+        localStorage.clear();
+
         $(document).ready(function() {
             $("#designtype").change(function() {
                 $("img[name=tshirtview]").attr("src", $(this).val());
-
+                setFront();
+                setBack();
             });
 
         });
@@ -374,16 +385,17 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script>
         var valueSelect = $("#designtype").val();
+
+
         $("#designtype").change(function() {
             valueSelect = $(this).val();
+            setFront();
+            setBack();
         });
         $('#flipback').click(function() {
             function swapImages(frontImage, backImage) {
                 if ($(this).attr("data-original-title") == "Show Back View") {
-                    html2canvas(document.getElementById('back-view')).then(function(canvas) {
-                        var image_back = canvas.toDataURL('image/png');
-                        // console.log('data2', image_back);
-                    });
+                    setBack();
                     $(this).attr('data-original-title', 'Show Front View');
                     $("#tshirtFacing").attr("src", frontImage);
 
@@ -399,10 +411,7 @@
 
                 } else {
                     $(this).attr('data-original-title', 'Show Back View');
-                    html2canvas(document.getElementById('front-view')).then(function(canvas) {
-                        var image_front = canvas.toDataURL('image/png');
-                        // console.log('data1', image_front);
-                    });
+                    setFront();
                     $("#tshirtFacing").attr("src", backImage);
                     $('#front-view').attr('id', 'back-view');
 
@@ -435,61 +444,81 @@
                 canvas.calcOffset();
             }, 200);
         });
+
+
+        document.getElementById('submitdesign').addEventListener('click', function() {
+            setFront();
+            setBack();
+
+            const sizeRows = document.querySelectorAll('table.table tr');
+            const selectedSizes = {};
+
+            sizeRows.forEach(row => {
+                const checkbox = row.querySelector('input[type="checkbox"]');
+                const size = checkbox.nextSibling.textContent.trim();
+                const quantityInput = row.querySelector('input[type="number"]');
+                const quantity = parseInt(quantityInput.value);
+
+                if (checkbox.checked && quantity > 0) {
+                    selectedSizes[size] = quantity;
+                }
+            });
+            setTimeout(() => {
+                document.getElementById('design_item_id').value = {{ $customdesign->id }};
+                document.getElementById('design_image_front').value = localStorage.getItem('image_front');
+                document.getElementById('design_image_back').value = localStorage.getItem('image_back');
+                document.getElementById('design_sizes').value = JSON.stringify(selectedSizes);
+                document.getElementById('purchaseForm').submit()
+            }, 2000);
+
+
+
+        });
+
+        function setFront() {
+            html2canvas(document.getElementById('front-view')).then(function(canvas) {
+                var image_front = canvas.toDataURL('image/png');
+                localStorage.setItem('image_front', image_front);
+
+            });
+        }
+
+        function setBack() {
+            html2canvas(document.getElementById('back-view')).then(function(canvas) {
+                var image_back = canvas.toDataURL('image/png');
+                localStorage.setItem('image_back', image_back);
+
+            });
+        }
     </script>
     <script>
-        document.getElementById('submitdesign').addEventListener('click', async function() {
-            try {
-                const image_frontCanvas = await html2canvas(document.getElementById('front-view'));
-                const image_front = image_frontCanvas.toDataURL('image/png');
+        // Select the element to observe
+        const shirtDiv = document.getElementById('shirtDiv');
 
-                const image_backCanvas = await html2canvas(document.getElementById('back-view'));
-                const image_back = image_backCanvas.toDataURL('image/png');
-
-                const sizeRows = document.querySelectorAll('table.table tr');
-                const selectedSizes = {};
-
-                sizeRows.forEach(row => {
-                    const checkbox = row.querySelector('input[type="checkbox"]');
-                    const size = checkbox.nextSibling.textContent.trim();
-                    const quantityInput = row.querySelector('input[type="number"]');
-                    const quantity = parseInt(quantityInput.value);
-
-                    if (checkbox.checked && quantity > 0) {
-                        selectedSizes[size] = quantity;
-                    }
-                });
-
-                const imageData = {
-                    user_id: 1,
-                    item_id: {{ $customdesign->id }},
-                    image_front: image_front,
-                    image_back: image_back,
-                    selectedSizes: selectedSizes,
-                };
-
-                console.log(imageData);
-
-                var endpoint = "{{ url('sent-purchase-request') }}";
-
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(imageData),
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log('API response:', data);
-                } else {
-                    console.error('API error:', response);
+        // Callback function to execute when changes are observed
+        const observerCallback = function(mutationsList, observer) {
+            for (let mutation of mutationsList) {
+                if (mutation.type === 'attributes') {
+                    // An attribute of shirtDiv has changed
+                    setFront();
+                    setBack();
                 }
-            } catch (error) {
-                console.error('Error:', error);
             }
-        });
+        };
+
+        // Options for the observer (in this case, observe attribute changes)
+        const observerOptions = {
+            attributes: true
+        };
+
+        // Create a new MutationObserver with the callback and options
+        const observer = new MutationObserver(observerCallback);
+
+        // Start observing the target element for changes
+        observer.observe(shirtDiv, observerOptions);
     </script>
+
+
 
 
 
