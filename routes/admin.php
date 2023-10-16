@@ -7,6 +7,7 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CustomDesignController;
+use App\Http\Controllers\CustomDesignIconsController;
 use App\Http\Controllers\DurationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -122,7 +123,14 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/active/{custom_design}', [CustomDesignController::class, 'active'])->name('custom_designs.active');
         Route::get('/inactive/{custom_design}', [CustomDesignController::class, 'inactive'])->name('custom_designs.inactive');
     });
-
+    Route::prefix('custom_design_icons')->group(function () {
+        // custom_design_icons-Routes
+        Route::get('/', [CustomDesignIconsController::class, 'index'])->name('custom_design_icons.index');
+        Route::post('/', [CustomDesignIconsController::class, 'store'])->name('custom_design_icons.store');
+        Route::get('/{custom_design_icons}/edit', [CustomDesignIconsController::class, 'edit'])->name('custom_design_icons.edit');
+        Route::post('/{custom_design_icons}', [CustomDesignIconsController::class, 'update'])->name('custom_design_icons.update');
+        Route::get('/{custom_design_icons}', [CustomDesignIconsController::class, 'destroy'])->name('custom_design_icons.destroy');
+    });
 
     Route::prefix('purchase_requests')->group(function () {
         // Blog-Routes
