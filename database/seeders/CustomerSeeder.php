@@ -18,7 +18,6 @@ class CustomerSeeder extends Seeder
                 'file' => '1684483679_file.jpg',
                 'birthday' => '2000-05-19',
                 'address' => 'newyork california',
-                'current_department' => 'arts',
                 'current_class' => $faker->randomElement(['Hsc', 'SSC']),
                 'current_school' => 'University of Harvard',
                 'created_at' => now(),

@@ -121,8 +121,7 @@
                 {{-- {{ dd($user->customer->image) }} --}}
                 <img src="{{ asset('') }}uploads/customers/{{ $user->customer->image }}" height="200" alt="">
                 <p class="mb-4">User birthday: <span class="text-primary">{{ $user->customer->birthday }}</span></p>
-                <p class="mb-4">User Depertment: <span
-                      class="text-primary">{{ $user->customer->current_department }}</span></p>
+          
                 <p class="mb-4">User Class: <span class="text-primary">{{ $user->customer->current_class }}</span>
                 <p class="mb-4">User school: <span class="text-primary">{{ $user->customer->current_school }}</span>
 

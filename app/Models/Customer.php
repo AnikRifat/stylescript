@@ -15,7 +15,6 @@ class Customer extends Model
         'file',
         'address',
         'birthday',
-        'current_department',
         'current_class',
         'current_school'
     ];

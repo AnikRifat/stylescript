@@ -62,15 +62,7 @@
                                             <input type="text" name="address" class="form-control"
                                               placeholder="Address Line 1" required>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="current_department" class="form-label">Customer Type
-                                                (Fashion Designer/Product Maker/Product Developer)</label>
-                                            <select name="current_department" class="form-select">
-                                                <option value="Fashion Designer">Fashion Designer</option>
-                                                <option value="Product Maker">Product Maker</option>
-                                                <option value="Product Developer">Product Developer</option>
-                                            </select>
-                                        </div>
+                                      
                                         <div class="col-md-6">
                                             <label for="current_school" class="form-label">Current Institution</label>
                                             <input type="text" name="current_school" class="form-control"

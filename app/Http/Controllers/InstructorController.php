@@ -147,7 +147,6 @@ class InstructorController extends Controller
         $data = $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'address' => 'required', 'birthday' => 'required',
-            'current_department' => 'required',
             'profession' => 'required',
             'subject' => 'required',
         ]);

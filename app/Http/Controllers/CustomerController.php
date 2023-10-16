@@ -62,7 +62,6 @@ class CustomerController extends Controller
             'file' => 'required',
             'address' => 'required',
             'birthday' => 'required',
-            'current_department' => 'required',
             'current_class' => 'required',
             'current_school' => 'required',
         ]);
@@ -135,7 +134,6 @@ class CustomerController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'address' => 'required',
             'birthday' => 'required',
-            'current_department' => 'required',
             'current_class' => 'required',
             'current_school' => 'required',
         ]);

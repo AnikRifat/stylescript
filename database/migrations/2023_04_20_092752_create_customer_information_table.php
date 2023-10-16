@@ -20,7 +20,6 @@ class CreateCustomerInformationTable extends Migration
             $table->string('file')->nullable();
             $table->date('birthday')->nullable();
             $table->string('address')->nullable();
-            $table->string('current_department')->nullable();
             $table->string('current_class');
             $table->string('current_school')->nullable();
             $table->timestamps();
