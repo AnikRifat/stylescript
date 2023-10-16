@@ -26,9 +26,7 @@
                         <div class="row y-gap-60">
                             <div class="col-12">
                                 <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100">
-                                    <div class="d-flex items-center py-20 px-30 border-bottom-light">
-                                        <h2 class="text-17 lh-1 fw-500">Basic Information</h2>
-                                    </div>
+                                  
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
