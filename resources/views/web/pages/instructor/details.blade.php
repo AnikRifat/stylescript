@@ -1,7 +1,6 @@
 @extends('web.pages.dashboard.app.app')
 
 @section('user-body')
-
     <!-- Page Header -->
     <section class="page-header -type-3 bg-purple-1">
         <div class="container">
@@ -24,8 +23,8 @@
                         </div>
                         <!-- @if ($isPurchased)
     <div class="d-flex items-center mt-30">
-                                <a href="{{ route('chat.show.patient', $instructor->id) }}" class="btn btn-md btn-success">Send Message</a>
-                            </div>
+                                    <a href="{{ route('chat.show.customer', $instructor->id) }}" class="btn btn-md btn-success">Send Message</a>
+                                </div>
     @endif -->
                     </div>
                 </div>

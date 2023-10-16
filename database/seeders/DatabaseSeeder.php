@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             ProductSeeder::class,
             DurationSeeder::class,
-            // OrderSeeder::class,
-            // TransactionSeeder::class
+             OrderSeeder::class,
+             TransactionSeeder::class
         ]);
     }
 }
