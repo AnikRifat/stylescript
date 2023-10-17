@@ -20,12 +20,12 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Custom Design Icons</h4>
+                            <h4 class="mb-sm-0 font-size-18">Custom Design Colors</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item">Dashboards</li>
-                                    <li class="breadcrumb-item active">Custom Design Icons</li>
+                                    <li class="breadcrumb-item active">Custom Design Colors</li>
                                 </ol>
                             </div>
 
@@ -39,14 +39,16 @@
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="{{ route('custom_design_icons.store') }}"
+                                <form method="POST" action="{{ route('custom_design_colors.store') }}"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label for="icon" class="form-label">Icon</label>
-                                            <input type="file" class="form-control dropify" id="icon" name="icon"
-                                                data-default-file="{{ old('icon') }}" required>
+                                            <label for="color" class="form-label">Color</label>
+
+                                            <input type="color" class="form-control" id="color" name="color"
+                                                required>
+
                                         </div>
                                         <div class="col-md-12 mt-3">
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -69,34 +71,28 @@
                                 <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>icons</th>
+                                        <th>colors</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($custom_design_icons as $k => $custom_design_icon)
+                                    @foreach ($custom_design_colors as $k => $custom_design_color)
                                         <tr>
                                             <td>{{ $k }}</td>
-                                            <td>
-                                                {{-- @if ($custom_design_icon->image) --}}
-                                                <img src="{{ asset('uploads/icons/' . $custom_design_icon->icon) }}"
-                                                    width="80">
-                                                {{-- @else
-                                                    No Image
-                                                @endif --}}
+                                            <td> <span class="badge "
+                                                    style="background-color: {{ $custom_design_color->color }}">{{ $custom_design_color->color }}</span>
                                             </td>
-                                            <td>{{ $custom_design_icon->timeline }}</td>
 
 
 
                                             <td>
 
                                                 <form hidden
-                                                    action="{{ route('custom_design_icons.destroy', $custom_design_icon->id) }}"
-                                                    id="form{{ $custom_design_icon->id }}" method="get">
+                                                    action="{{ route('custom_design_colors.destroy', $custom_design_color->id) }}"
+                                                    id="form{{ $custom_design_color->id }}" method="get">
                                                     @csrf
                                                 </form>
                                                 <button class="btn btn-danger waves-effect btn-circle waves-light"
-                                                    onclick="deleteItem({{ $custom_design_icon->id }});" type="button">
+                                                    onclick="deleteItem({{ $custom_design_color->id }});" type="button">
                                                     <i class="fa fa-trash"></i> </button>
                                             </td>
 

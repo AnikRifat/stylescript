@@ -140,7 +140,7 @@
                                     <select id="designtype">
 
                                         @foreach ($customdesign->catalogs as $k => $data)
-                                            <option value="{{ asset('storage/app/public/' . $data->front_image) }}"
+                                            <option value="{{ asset('uploads/catalogs/fronts/' . $data->front_image) }}"
                                                 @if ($k == 0) selected @endif>
                                                 {{ $data->name }}</option>
                                         @endforeach
@@ -149,12 +149,11 @@
                                 </div>
                                 <div class="well">
                                     <ul class="nav">
-                                        <li class="color-preview" title="White" style="background-color:#ffffff;"></li>
-                                        <li class="color-preview" title="Dark Heather"
-                                            style="background-color:#616161;"></li>
-                                        <li class="color-preview" title="Gray" style="background-color:#f0f0f0;"></li>
-                                        <li class="color-preview" title="Charcoal" style="background-color:#5b5b5b;">
-                                        </li>
+                                        @foreach ($colors as $item)
+                                            <li class="color-preview" title="{{ $item->color }}"
+                                                style="background-color:{{ $item->color }};"></li>
+                                        @endforeach
+
 
                                     </ul>
                                 </div>
@@ -168,8 +167,11 @@
                                         <hr>
                                     </div>
                                     <div id="avatarlist">
-                                        <img style="cursor:pointer;" class="img-polaroid"
-                                            src="{{ asset('') }}assets/design/img/invisibleman.jpg">
+                                        @foreach ($icons as $item)
+                                            <img style="cursor:pointer;" class="img-polaroid"
+                                                src="{{ asset('') }}uploads/icons/{{ $item->icon }}">
+                                        @endforeach
+
                                     </div>
                                     <div>
                                         <hr>
@@ -268,7 +270,7 @@
                         <div id="shirtDiv" class="page"
                             style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
                             <img name="tshirtview" id="tshirtFacing"
-                                src="{{ asset('storage/app/public/' . $firstcatalog->front_image) }}">
+                                src="{{ asset('uploads/catalogs/fronts/' . $firstcatalog->front_image) }}">
                             <div id="drawingArea"
                                 style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
                                 <canvas id="tcanvas" width=200 height="400" class="hover"
@@ -356,10 +358,10 @@
 
             <form action="{{ route('design.store') }}" method="POST" id="purchaseForm">
                 @csrf
-                <input type="number" id="design_item_id" name="item_id" value="">
-                <input type="text" id="design_image_front" name="image_front" value="">
-                <input type="text" id="design_image_back" name="image_back" value="">
-                <input type="text" id="design_sizes" name="sizes" value="">
+                <input type="hidden" id="design_item_id" name="item_id" value="">
+                <input type="hidden" id="design_image_front" name="image_front" value="">
+                <input type="hidden" id="design_image_back" name="image_back" value="">
+                <input type="hidden" id="design_sizes" name="sizes" value="">
 
             </form>
         </section>
@@ -427,9 +429,9 @@
 
             switch (valueSelect) {
                 @foreach ($customdesign->catalogs as $catalog)
-                    case "{{ asset('storage/app/public/' . $catalog->front_image) }}":
-                    swapImages.call(this, "{{ asset('storage/app/public/' . $catalog->front_image) }}",
-                        "{{ asset('storage/app/public/' . $catalog->back_image) }}");
+                    case "{{ asset('uploads/catalogs/fronts/' . $catalog->front_image) }}":
+                    swapImages.call(this, "{{ asset('uploads/catalogs/fronts/' . $catalog->front_image) }}",
+                        "{{ asset('uploads/catalogs/backs/' . $catalog->back_image) }}");
                     break;
                 @endforeach
 

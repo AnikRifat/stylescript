@@ -15,6 +15,7 @@ class CreateCustomDesignColorsTable extends Migration
     {
         Schema::create('custom_design_colors', function (Blueprint $table) {
             $table->id();
+            $table->string('color');
             $table->timestamps();
         });
     }

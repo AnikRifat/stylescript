@@ -67,7 +67,7 @@
                                                 <td>{{ $custom_design->title }}</td>
                                                 <td>
                                                     @if ($custom_design->image)
-                                                        <img src="{{ asset('storage/app/public/' . $custom_design->image) }}"
+                                                        <img src="{{ asset('uploads/catalogs/' . $custom_design->image) }}"
                                                             alt="{{ $custom_design->title }}" width="80">
                                                     @else
                                                         No Image
@@ -77,7 +77,7 @@
                                                     @if ($custom_design->status == 1)
                                                         <form
                                                             action="{{ route('custom_designs.inactive', $custom_design->id) }}"
-                                                            method="POST">
+                                                            method="get">
                                                             @csrf
                                                             <button type="submit"
                                                                 class="btn btn-success waves-effect btn-circle waves-light">
@@ -87,7 +87,7 @@
                                                     @else
                                                         <form
                                                             action="{{ route('custom_designs.active', $custom_design->id) }}"
-                                                            method="POST">
+                                                            method="get">
                                                             @csrf
                                                             <button type="submit"
                                                                 class="btn btn-danger waves-effect btn-circle waves-light">
@@ -108,7 +108,7 @@
 
                                                     <form hidden
                                                         action="{{ route('custom_designs.destroy', $custom_design->id) }}"
-                                                        id="form{{ $custom_design->id }}" method="POST">
+                                                        id="form{{ $custom_design->id }}" method="get">
                                                         @csrf
                                                     </form>
 

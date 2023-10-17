@@ -156,13 +156,7 @@ class ProductController extends Controller
             return back()->with('error', 'product Activation Unsuccessfull');
         }
     }
-    /**
-     * Inactive  the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
     public function Inactive(Product $product)
 
     {

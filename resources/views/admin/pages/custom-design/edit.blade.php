@@ -43,7 +43,7 @@
                                                 <label for="image" class="form-label">Thumbnail</label>
                                                 <input type="file" class="form-control dropify" id="image"
                                                     name="image"
-                                                    data-default-file="{{ asset('storage/app/public/' . $customDesign->image) }}">
+                                                    data-default-file="{{ asset('uploads/catalogs/' . $customDesign->image) }}">
                                             </div>
                                         </div>
                                         <div class="col-md-12">

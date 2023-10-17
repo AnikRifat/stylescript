@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CustomDesignColorsController;
 use App\Http\Controllers\CustomDesignController;
 use App\Http\Controllers\CustomDesignIconsController;
 use App\Http\Controllers\DurationController;
@@ -131,7 +132,14 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::post('/{custom_design_icons}', [CustomDesignIconsController::class, 'update'])->name('custom_design_icons.update');
         Route::get('/{custom_design_icons}', [CustomDesignIconsController::class, 'destroy'])->name('custom_design_icons.destroy');
     });
-
+    Route::prefix('custom_design_colors')->group(function () {
+        // custom_design_colors-Routes
+        Route::get('/', [CustomDesignColorsController::class, 'index'])->name('custom_design_colors.index');
+        Route::post('/', [CustomDesignColorsController::class, 'store'])->name('custom_design_colors.store');
+        Route::get('/{custom_design_colors}/edit', [CustomDesignColorsController::class, 'edit'])->name('custom_design_colors.edit');
+        Route::post('/{custom_design_colors}', [CustomDesignColorsController::class, 'update'])->name('custom_design_colors.update');
+        Route::get('/{custom_design_colors}', [CustomDesignColorsController::class, 'destroy'])->name('custom_design_colors.destroy');
+    });
     Route::prefix('purchase_requests')->group(function () {
         // Blog-Routes
         Route::get('/', [PurchaseRequestController::class, 'index'])->name('purchase_requests.index');

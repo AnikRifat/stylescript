@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CustomDesignIcons;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
 
 // namespace Intervention\Image\Facades;
 

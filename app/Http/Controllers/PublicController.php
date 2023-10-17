@@ -7,6 +7,8 @@ use App\Models\Catalog;
 use App\Models\Comments;
 use App\Models\Course;
 use App\Models\CustomDesign;
+use App\Models\CustomDesignColors;
+use App\Models\CustomDesignIcons;
 use App\Models\Duration;
 use App\Models\Order;
 use App\Models\Product;
@@ -270,10 +272,12 @@ class PublicController extends Controller
     public function customDesignDetails($id)
     {
         // $product = Product::find($product);
+        $colors = CustomDesignColors::all();
+        $icons = CustomDesignIcons::all();
         $customdesign = CustomDesign::find($id);
         $firstcatalog = Catalog::where('custom_design_id', $id)->first();
         // dd($firstcatalog);
-        return view('web.pages.custom-design.details', compact('customdesign', 'firstcatalog'));
+        return view('web.pages.custom-design.details', compact('customdesign', 'firstcatalog', 'icons', 'colors'));
     }
 
     public function saveImage(Request $request)
