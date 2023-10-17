@@ -4,3 +4,13 @@ $(document).ready(function() {
         buttons: ["copy", "excel", "pdf", "colvis"]
     }).buttons().container().appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)"), $(".dataTables_length select").addClass("form-select form-select-sm")
 });
+
+$(document).ready(function() {
+    $("#datatable").DataTable(), $("#datatable-buttons2").DataTable({
+        lengthChange: !1,
+        paging: false,
+        info: fasle,
+        buttons: ["copy", "excel", "pdf", "colvis"]
+    }).buttons().container().appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)"), $(
+        ".dataTables_length select").addClass("form-select form-select-sm")
+});

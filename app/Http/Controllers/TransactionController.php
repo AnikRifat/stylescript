@@ -100,40 +100,42 @@ class TransactionController extends Controller
         return view('admin.pages.transaction.sales', compact('salesData'));
     }
 
-
-    public function coursefilter(Request $request)
+    public function course(Request $request)
     {
-        $instructorId = $request->input('instructorId');
+        if ($request->input('instructorId')) {
+            $instructorId = $request->input('instructorId');
+            $transactions = $this->coursefilter($instructorId);
+        } else {
+            $transactions = Transaction::where('instructor_id', '!=', 0)->paginate(10);
+
+        }
+
+        // dd($transactions);
+        $orders = Order::where('status', 1)->where('type', 1)->get();
+        $customerIds = $orders->pluck('user_id')->unique();
+        $customers = User::whereIn('id', $customerIds)->get();
+        $instructorIds =Transaction::pluck('instructor_id')->unique();
+        $instructors = User::whereIn('id', $instructorIds)->get();
 
 
+
+        return view('admin.pages.transaction.course', compact('transactions', 'instructors'));
+    }
+    public function coursefilter($instructorId)
+    {
         // $query = Transaction::query();
 
         if ($instructorId == 0) {
-            $transactions = Transaction::where('instructor_id', '!=', 0)->get();
+            $transactions = Transaction::where('instructor_id', '!=', 0)->paginate(10);
         } else {
 
-            $transactions = Transaction::where('instructor_id', '=', $instructorId)->where('instructor_id', $instructorId)->get();
+            $transactions = Transaction::where('instructor_id', '=', $instructorId)->where('instructor_id', $instructorId)->paginate(10);
         }
 
         // dd($transactions);
 
 
-        $response = [];
-
-        foreach ($transactions as $item) {
-            $response[] = [
-                'coursetitle' => $item->order->course->title,
-                'invoice' => $item->invoice,
-                'creator_name' => $item->creator->name,
-                'amount' => $item->amount,
-                'ratio' => $item->ratio,
-                'instructor' => $item->instructor,
-                'owner' => $item->owner,
-                'created_at' => $item->created_at->format('d-m-y h:i:a'),
-            ];
-        }
-
-        return response()->json($response);
+        return $transactions;
     }
     public function shopfilter(Request $request)
     {
@@ -171,18 +173,7 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function course()
-    {
-        $transactions = Transaction::where('instructor_id', '!=', 0)->paginate(10);
-        // dd($transactions);
-        $orders = Order::where('status', 1)->where('type', 1)->get();
-        $customerIds = $orders->pluck('user_id')->unique();
-        $customers = User::whereIn('id', $customerIds)->get();
-        $instructorIds = $transactions->pluck('instructor_id')->unique();
-        $instructors = User::whereIn('id', $instructorIds)->get();
 
-        return view('admin.pages.transaction.course', compact('transactions', 'instructors'));
-    }
 
     public function shop()
     {
@@ -218,8 +209,8 @@ class TransactionController extends Controller
     public function destroy(Transaction $transaction)
     {
         $order = Order::find($transaction->order_id);
-        $orderdelete =  $order->delete();
-        $transactiondelete =  $transaction->delete();
+        $orderdelete = $order->delete();
+        $transactiondelete = $transaction->delete();
 
 
         if ($orderdelete && $transactiondelete) {
