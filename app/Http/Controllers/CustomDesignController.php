@@ -147,85 +147,61 @@ class CustomDesignController extends Controller
         return view('admin.pages.custom-design.edit', compact('customDesign'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CustomDesign  $customDesign
-     * @return \Illuminate\Http\Response
-     */public function update(Request $request, CustomDesign $customDesign)
-    {
-        // dd($request->all());
-        // Validate the incoming request data if needed
-        // $request->validate([...]);
 
-        // Update the custom design
+
+    public function update(Request $request, CustomDesign $customDesign)
+    {
         $customDesign->update([
             'title' => $request->input('title'),
-            // Add other fields you want to update here
         ]);
 
-        // Handle image update if necessary (assuming you are using the intervention/image package)
+        // Handle the custom design image
         if ($request->hasFile('image')) {
-            $mi = $request->file('image');
-            $miName = time() . '.' . $mi->extension();
-
-            $img = Image::make($mi->path());
-            $img->fit(530, 630); // resize the fi to fit within 380x310 while preserving aspect ratio
-            $img->encode('jpg', 80); // convert fi to JPEG format with 80% quality and reduce file size to 80kb
-            $img->save(base_path('uploads/catalogs/') . $miName);
-            $imagePath = $miName;
+            $image = $request->file('image');
+            $imagePath = $this->uploadImage($image, 'uploads/catalogs/');
             $customDesign->image = $imagePath;
             $customDesign->save();
         }
+
         // Loop through the catalogs and update them
-        foreach ($request->input('catalog_names') as $key => $catalogName) {
-            // Find the catalog by its ID (assuming you have a unique identifier for catalogs)
-            $catalog = Catalog::find($request->input('catalog_ids')[$key]);
+        $catalogData = $request->only('catalog_ids', 'catalog_names', 'catalog_fronts', 'catalog_backs');
+        $this->updateCatalogs($catalogData);
 
-            // Update the catalog details
-            $catalog->name = $catalogName;
-            // Add other fields you want to update for catalogs here
-
-            // Save the catalog changes
-            $catalog->save();
-
-
-
-
-
-
-
-            // Handle image update for the catalog if necessary
-            if ($request->hasFile('catalog_fronts')) {
-                $fi = $request->fileile('catalog_fronts')[$key];
-                $fiName = time() . '.' . $fi->extension();
-                $img = Image::make($fi->path());
-                $img->fit(530, 630); // resize the fi to fit within 380x310 while preserving aspect ratio
-                $img->encode('jpg', 80); // convert fi to JPEG format with 80% quality and reduce file size to 80kb
-                $img->save(base_path('uploads/catalogs/fronts/') . $fiName);
-                $fiPath = $fiName;
-                $catalog->front_image = $fiPath;
-            }
-
-            if ($request->hasFile('catalog_backs')) {
-
-                $bi = $request->fileile('catalog_backs')[$key];
-                $biName = time() . '.' . $bi->extension();
-                $img = Image::make($bi->path());
-                $img->fit(530, 630); // resize the fi to fit within 380x310 while preserving aspect ratio
-                $img->encode('jpg', 80); // convert fi to JPEG format with 80% quality and reduce file size to 80kb
-                $img->save(base_path('uploads/catalogs/backs/') . $biName);
-                $biPath = $biName;
-                $catalog->front_image = $biPath;
-
-            }
-            $catalog->save();
-        }
-
-        // Redirect back to the custom design index page with a success message
         return redirect()->route('custom_designs.index')->with('success', 'Custom Design updated successfully');
     }
+
+    private function uploadImage($file, $uploadPath)
+    {
+        $imageName = time() . '.' . $file->extension();
+        $image = Image::make($file->path());
+        $image->fit(530, 630);
+        $image->encode('jpg', 80);
+        $image->save(base_path($uploadPath) . $imageName);
+        return $imageName;
+    }
+    private function updateCatalogs($data)
+    {
+        foreach ($data['catalog_ids'] as $key => $catalogId) {
+            $catalog = Catalog::find($catalogId);
+            $catalog->name = $data['catalog_names'][$key];
+
+            if (isset($data['catalog_fronts'][$key]) && $data['catalog_fronts'][$key]) {
+                $frontImage = $this->uploadImage($data['catalog_fronts'][$key], 'uploads/catalogs/fronts/');
+                $catalog->front_image = $frontImage;
+            }
+
+            if (isset($data['catalog_backs'][$key]) && $data['catalog_backs'][$key]) {
+                $backImage = $this->uploadImage($data['catalog_backs'][$key], 'uploads/catalogs/backs/');
+                $catalog->back_image = $backImage;
+            }
+
+            $catalog->save();
+        }
+    }
+
+
+
+
 
     /**
      * Remove the specified resource from storage.

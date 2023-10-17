@@ -117,10 +117,10 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/', [CustomDesignController::class, 'index'])->name('custom_designs.index');
         Route::get('/create', [CustomDesignController::class, 'create'])->name('custom_designs.create');
         Route::post('/', [CustomDesignController::class, 'store'])->name('custom_designs.store');
-        Route::get('/{custom_design}', [CustomDesignController::class, 'show'])->name('custom_designs.view');
-        Route::get('/{custom_design}/edit', [CustomDesignController::class, 'edit'])->name('custom_designs.edit');
-        Route::put('/{custom_design}', [CustomDesignController::class, 'update'])->name('custom_designs.update');
-        Route::get('/{custom_design}', [CustomDesignController::class, 'destroy'])->name('custom_designs.destroy');
+        Route::get('view//{custom_design}', [CustomDesignController::class, 'show'])->name('custom_designs.view');
+        Route::get('edit/{custom_design}/edit', [CustomDesignController::class, 'edit'])->name('custom_designs.edit');
+        Route::put('update/{custom_design}', [CustomDesignController::class, 'update'])->name('custom_designs.update');
+        Route::get('delete/{custom_design}', [CustomDesignController::class, 'destroy'])->name('custom_designs.destroy');
         Route::get('/active/{custom_design}', [CustomDesignController::class, 'active'])->name('custom_designs.active');
         Route::get('/inactive/{custom_design}', [CustomDesignController::class, 'inactive'])->name('custom_designs.inactive');
     });
